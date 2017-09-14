@@ -1,4 +1,1 @@
-#Curso:
-Programacion I
-#Profesor/a:
-Susana 
+Github Para el curso Programacion I de la profesora Susana ____________.
