@@ -1,1 +1,1 @@
-Github Para el curso Programacion I de la profesora Susana ____________.
+Github Para el curso Programacion I de Susana.
