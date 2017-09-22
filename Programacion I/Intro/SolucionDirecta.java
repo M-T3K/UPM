@@ -1,3 +1,4 @@
+//@author Kevin Alberto Lopez Porcheron
 public class SolucionDirecta  {
 
 // Suma
