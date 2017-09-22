@@ -134,7 +134,8 @@ public class SolucionDirecta  {
 	 * Asumo que si la suma es 0 tambien se considera negativa */
 	public static int sumaPositiva(int x, int y)	{
 		
-		return (x + y > 0)? x + y : 0;
+		int sum = x + y;
+		return (sum > 0)? sum : 0;
 		
 	}
 	//-----------------------------------------------------------------------
