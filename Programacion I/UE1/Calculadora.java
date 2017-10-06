@@ -79,6 +79,8 @@ public class Calculadora {
 			case 6:
 				System.out.println(potencia(StdIn.readInt(), StdIn.readInt()));
 				break;
+			default:
+				System.out.println("You gave wrong Input!");
 			
 		}
 		
