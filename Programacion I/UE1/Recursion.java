@@ -96,7 +96,7 @@ public class Recursion {
 			
 			return 0;
 			
-		}	else if(((n % 10) % 2 == 0) && (numeroCifras(n) % 2 == 0))	{
+		}	else if(((n % 10) % 2 == 0) && (numeroCifras(n) % 2 == 1))	{
 			
 			return n % 10 + sumaCifrasParesPosImpar(n / 10);
 			
