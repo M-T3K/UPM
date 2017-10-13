@@ -110,7 +110,15 @@ public class BucleFor {
 		
 		int c = 0;
 		for( ; n > 0; n /= 10)	{
+			/* Esto arregla el caso n = 0, pero realmente esto no deberia pasar
+			porque un numero que sea 0123 no es mas que 123.
+			if(c < 10)	{
 			
+			    c++;
+			    break; // O quizas return c++
+			
+			}
+			*/
 			c++;
 			
 		}
