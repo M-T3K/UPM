@@ -58,7 +58,7 @@ public class BucleFor {
 		
 		for(; a <= b; ++a)	{
 			
-			res += a * a;
+			res += a * a * a;
 			
 		}
 		
