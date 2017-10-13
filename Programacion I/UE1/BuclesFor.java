@@ -109,7 +109,7 @@ public class BucleFor {
 	public static int numeroCifras(int n)	{
 		
 		int c = 0;
-		for(int i = 0; n > 0; n /= 10)	{
+		for( ; n > 0; n /= 10)	{
 			
 			c++;
 			
