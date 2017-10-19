@@ -19,7 +19,7 @@ class Primo {
     System.out.println("esPrimo(3) --> " + esPrimo(3));
     System.out.println("esPrimo(35) --> " + esPrimo(35));
     System.out.println("esPrimo(71) --> " + esPrimo(71));
-    System.out.println("esPrimo(1967) --> " + esPrimo(997));
+    System.out.println("esPrimo(997) --> " + esPrimo(997));
   }
 
 }//ENDOF: class Primo
