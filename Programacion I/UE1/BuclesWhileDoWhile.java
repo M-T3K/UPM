@@ -8,10 +8,6 @@
 
 class BuclesWhileDoWhile {
 
-  public static int dameUltimoDigito(int number){
-    return number - (number / 10) * 10;
-  }//ENDOF: dameUltimoDigito()
-
   public static int sumaDeMenoresQueSeis(){
     int sumatorio = 0;
     int entrada = 0;
@@ -28,7 +24,7 @@ class BuclesWhileDoWhile {
     int cifra = 0;
     do{
       sumatorio += cifra;
-      cifra = dameUltimoDigito(number);
+      cifra = number % 10;
       number = number / 10;
     }while(cifra != 0);
     return sumatorio;
@@ -38,7 +34,7 @@ class BuclesWhileDoWhile {
     boolean is = false;
     int cifra = 0;
     do{
-      cifra = dameUltimoDigito(number);
+      cifra = number % 10;
       number = number / 10;
       is = (digit == cifra)?true:false;
     }while(!is && number != 0);
@@ -51,7 +47,7 @@ class BuclesWhileDoWhile {
     int posicion = 0;
     do{
       posicion++;
-      cifra = dameUltimoDigito(number);
+      cifra = number % 10;
       number = number / 10;
       sumatorio += posicion * cifra;
     }while(number != 0);
