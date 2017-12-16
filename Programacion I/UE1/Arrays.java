@@ -7,9 +7,17 @@
 class Arrays{
 
   public static void mostrarArray(int[] arr){
-    for (int i = 0; i < arr.length; i++) {
+    /*for (int i = 0; i < arr.length; i++) {
       System.out.println("[" + i + "] --> " + arr[i]);
+    }*/
+    System.out.print("[");
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(arr[i]);
+      if(i != arr.length - 1){
+        System.out.print(", ");
+      }
     }
+    System.out.println("]");
   }//ENDOF: mostrarArray()
 
   public static boolean compararArrays(int[] arr, int[] arr2){
