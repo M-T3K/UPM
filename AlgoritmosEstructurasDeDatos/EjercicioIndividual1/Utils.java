@@ -20,9 +20,9 @@ public class Utils {
         ++currRep;
 
       } 
-      else {
+      else if (currRep>=maxReps)  {
 
-        maxReps = (maxReps>=currRep) ? maxReps : currRep;
+        maxReps = currRep;
         currRep = 0; // Reiniciamos el contador
 
       }
