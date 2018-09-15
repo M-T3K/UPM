@@ -15,21 +15,28 @@ public class Utils {
     
     for(Integer n : a) {
 
-      if(n.equals(elem)) {
+      currRep = (n.equals(elem)) ? ++currRep : 0;
+
+      /* if(n.equals(elem)) {
 
         ++currRep;
 
       } 
-      else if (currRep>=maxReps)  {
+      else {
+
+        currRep = 0; // Reiniciamos el contador
+
+      } */
+
+      if (currRep>=maxReps)  {
 
         maxReps = currRep;
-        currRep = 0; // Reiniciamos el contador
 
       }
       
     }
 
-    return (currRep>=maxReps) ? currRep : maxReps;
+    return maxReps;
 
   }
   //----------------------------------------------------
