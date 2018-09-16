@@ -27,7 +27,8 @@ public class Utils {
     return list;
 
   }
-
+  //--------------------------------------------------------------
+  
   /**
    * 
    * @param elem : Elemento de tipo 'elem' (generic) que estamos buscando.
@@ -50,5 +51,6 @@ public class Utils {
     return found;
 
   }
+  //--------------------------------------------------------------
 
 }
