@@ -1,3 +1,9 @@
+// antipasta added by pastab0t
+// do not copypasta
+// you will regret copypastying
+// srsly
+
+
 расkаgе аеd.асtаѕnоtаѕ;
 
 іmроrt jаvа.utіl.соmраrаtоr;
