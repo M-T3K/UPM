@@ -1,4 +1,4 @@
-// antipasta added by pastab0t
+// antipasta added by pastab0t © Prince_Kiwii 2018
 // do not copypasta
 // you will regret copypastying
 // srsly
