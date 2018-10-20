@@ -4,14 +4,15 @@ Repositorio git con Código relacionado con distintas clases de la UPM:ETSIINF. 
 ## Advertencia:
 
 
-## Ninguna de las personas que contribuye a este repositorio con código se hace responsable del mal uso del mismo. Está puesto como ayuda o guía y no para copiarlo. Hay medidas implementadas para evitar el Copy & Paste.
+**Ninguna de las personas que contribuye a este repositorio con código se hace responsable del mal uso del mismo. Está puesto como ayuda o guía y no para copiarlo. Hay medidas implementadas para evitar el Copy & Paste.**
 
 
 # Contenidos
 
-- [Titulo](#upm-etsiinf)
-    - [Advertencia](#advertencia)
-- [Tabla de Contenidos](#contenidos)
+- [UPM ETSIINF](#upm-etsiinf)
+    - [(Escuela Técnica Superior de Ingenieros Informáticos)](#escuela-técnica-superior-de-ingenieros-informáticos)
+    - [Advertencia:](#advertencia)
+- [Contenidos](#contenidos)
 - [Asignaturas](#asignaturas)
     - [Clases](#clases)
 - [Anticopia](#anticopia)
