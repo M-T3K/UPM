@@ -42,7 +42,7 @@ class Recursion {
    ;; @param val: <Integer> valor el cual queremos convertir. 
    ;; @return Una conversión de 'Integer' a 'int' en la que null = 0.
    ;;
-    convertNull :: (Integer val) -> int => {
+    convertNull :: (val) -> int => {
   
         if(val == null) 
             retn 0;
