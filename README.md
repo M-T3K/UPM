@@ -60,6 +60,8 @@ Sección con información acerca de las personas que contribuyen a este repo.
             +   2M-B (Curso 2017-18)
         +  Programación 2:
             +   2M-B (Curso 2017-18)
+        +  Sistemas Digitales:
+            +   2M/2M-B (Curso 2017-18)
         +  Programación para Sistemas:
             +   2M-B (Curso 2018-19)
         + Algoritmos y Estructuras de Datos:
