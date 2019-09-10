@@ -1,3 +1,6 @@
 [submodule "Programacion2UPM"]
 	path = Programacion2UPM
 	url = https://github.com/RACAPPS/Programacion2UPM.git
+[submodule "ETSIINFUPM"]
+	path = ETSIINFUPM
+	url = https://github.com/RESKOM326/ETSIINFUPM
