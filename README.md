@@ -86,3 +86,26 @@ Sección con información acerca de las personas que contribuyen a este repo.
         + Telegram: @rubenaguadoc
         + GitHub: [Aquí](https://github.com/RACAPPS/)
         + E-Mail: _______
+       
++ RESKOM326:
+    + Contribuyente.
+    + Asignaturas:
+        +   Programación 1:
+             +    1M-B (1M secundario) (Curso 2017-18)
+        +   Programación 2:
+             +    1M-B (1M secundario) (Curso 2017-18)
+        +   Probabilidad y Estadística I
+             +    1M-B / 1M (Curso 2017-18)
+        +   Sistemas Digitales
+             +    1M (Curso 2017-18)
+        +   Algoritmos y Estructura de Datos
+             +    3S2M (Curso 2018-19)
+        +   Programación para Sistemas
+             +    3S2M (Curso 2018-19)
+        +   Concurrencia
+             +    4F2M (Curso 2018-19)
+        +   Próximamente Bases de Datos, Estructura de Computadores y Arquitectura de Computadores
+    + Contacto:
+        + Telegram: @RESKOM326
+        + Github: [Aquí](https://github.com/RESKOM326/)
+        + E-Mail: _______
