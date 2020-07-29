@@ -1,0 +1,500 @@
+;-------------------------------------------------------------------------------
+;-----  z170296, Mark Dervishaj Memi - z170042, Angelika Krolikowska    ---------------------------------------
+;-------------------------------------------------------------------------------
+;-------------------------------------------------------------------------------
+;-----  PROYECTO ENSAMBLADOR MC88110, ESTRUCTURA DE COMPUTADORES    ------------
+;-------------------------------------------------------------------------------
+
+LEA:                MACRO (reg,ETIQ)        ; macro LEA
+                    or reg,r0,low(ETIQ)
+                    or.u reg,reg,high(ETIQ)
+                    ENDMACRO
+
+LOAD:               MACRO (reg,ETIQ)        ; macro LOAD
+                    LEA (reg,ETIQ)
+                    ld reg,reg,0
+                    ENDMACRO
+
+PUSH:               MACRO (reg)             ; macro PUSH
+                    subu r30,r30,4
+                    st reg,r30,r0
+                    ENDMACRO
+
+POP:                MACRO (reg)             ; macro POP
+                    ld reg,r30,r0
+                    addu r30,r30,4
+                    ENDMACRO
+
+;-------------------------------------------------------------------------------				
+				
+                    org 0
+				
+                    data 4                  ; valor de nF en M(0)
+				
+				    MAT:                     data 6,6,6,6,6,6,6,6,6
+				    VEC:                     data 1, 1
+				
+				    IM1:                     data 2,2,0x07020702
+                    IM2:                     data 2,2,0x00020702
+
+                    SUBIMG:                  data 0x004B4A44, 0x4A494342, 0x000004B
+
+                    MFILTRO:                 data 0x00000001, 0x00000001, 0x00000001
+                                             data 0x00000001, 0x00000000, 0x00000001
+                                             data 0x00000001, 0x00000001, 0x00000001
+
+                    IMAGENSUB:               data 4, 4
+                                             data 0x04030201, 0x0D0E0F10, 0x05040302, 0x23222120
+
+                    IMFILT:                  res 24
+
+                    SUBMATRIZ:               data 0x00000000, 0x00000000, 0x00
+
+;-------------------------------------------------------------------------------
+						
+				    org 2000		
+
+PPALnfiltrados:     LEA (r30,60000)         ; inicializar puntero de pila
+                    addu r20,r0,6           ; oper=6
+                    PUSH(r20)               ; meter oper en la pila
+                    bsr nFiltrados          ; llamada a nFiltrados
+                    addu r30,r30,4          ; eliminar de la pila el parametro
+                    stop                    ; parar ejecucion
+
+PPALactfiltro:      LEA(r30,60000)          ; inicializar puntero de pila
+                    LEA(r15,MAT)            ; cargar matriz
+                    LEA(r16,VEC)            ; cargar vector
+                    PUSH(r16)               ; meter matriz en la pila
+                    PUSH(r15)               ; meter vector en la pila
+                    bsr ActualizaFiltro     ; llamada a nFiltrados
+                    addu r30,r30,8          ; eliminar de la pila los parametros
+                    stop                    ; parar ejecucion
+				
+PPALcomp:           LEA(r30,60000)          ; inicializa puntero de pila
+                    LEA(r20,IM1)            ; carga Imagen1
+                    LEA(r21,IM2)            ; carga Imagen2
+                    PUSH(r20)               ; IM1 a la pila
+                    PUSH(r21)               ; IM2 a la pila
+                    bsr Comp                ; salta a Comp
+                    addu r30,r30,8          ; eliminar de la pila los parametros
+                    stop                    ; fin de ejecucion
+
+PPALvalorpixel:     LEA(r30,60000)          ; inicializa puntero de pila
+                    LEA(r20,SUBIMG)         ; carga SubImg
+                    LEA(r21,MFILTRO)        ; carga MFiltro
+                    PUSH(r21)               ; MFiltro a la pila
+                    PUSH(r20)               ; SubImg a la pila
+                    bsr ValorPixel          ; llama a ValorPixel
+                    addu r30,r30,8          ; eliminar de la pila los parametros
+                    stop
+
+PPALsubmatriz:      LEA(r30,60000)          ; inicializa puntero de pila
+                    addu r5,r0,2            ; carga j
+                    addu r4,r0,1            ; carga i
+                    LEA(r21,SUBMATRIZ)      ; carga submatriz
+                    LEA(r20,IMAGENSUB)      ; carga la imagen
+                    PUSH(r5)                ; mete j en la pila
+                    PUSH(r4)                ; mete i en la pila
+                    PUSH(r21)               ; mete submatriz en la pila
+                    PUSH(r20)               ; mete imagen en la pila
+                    bsr SubMatriz           ; salta a SubMatriz
+                    addu r30,r30,16         ; eliminar de la pila los parametros
+                    stop	                
+
+PPALfilpixel:       LEA(r30,60000)          ; inicializa puntero de pila
+                    LEA(r2,IMAGENSUB)       ; carga imagen
+                    LEA(r9,MFILTRO)         ; carga MFiltro
+                    addu r4,r0,2            ; carga j
+                    addu r3,r0,2            ; carga i
+                    PUSH(r9)                ; mete en pila
+                    PUSH(r4)                ; mete en pila
+                    PUSH(r3)                ; mete en pila
+                    PUSH(r2)                ; mete en pila
+                    bsr FilPixel            ; salta a FilPixel
+                    addu r30,r30,16         ; eliminar de la pila los parametros
+                    stop
+
+PPALfiltro:         LEA(r30,60000)          ; inicializa puntero de pila
+                    LEA(r20,IMAGENSUB)      ; carga Imagen
+                    LEA(r10,IMFILT)         ; carga ImFiltrada
+                    LEA(r11,MFILTRO)        ; carga MFiltro
+                    PUSH(r11)               ; mete en pila
+                    PUSH(r10)               ; mete en pila
+                    PUSH(r20)               ; mete en pila
+                    bsr Filtro              ; llama a Filtro
+                    addu r30,r30,12         ; eliminar de la pila los parametros
+                    stop
+
+PPALfiltrec:        LEA(r30,60000)          ; inicializa puntero de pila
+                    LEA(r20,IMAGENSUB)      ; carga ImagenIn
+                    LEA(r21,IMFILT)         ; carga ImagenOut
+                    LEA(r22,MFILTRO)        ; carga MFiltro
+                    LEA(r23,VEC)            ; carga ModMFiltro
+                    addu r24,r0,40          ; NCambios=1
+                    PUSH(r24)               ; mete parametro
+                    PUSH(r23)               ; mete parametro
+                    PUSH(r22)               ; mete parametro
+                    PUSH(r21)               ; mete parametro
+                    PUSH(r20)               ; mete parametro
+                    bsr FiltRec             ; llama a FiltRec                
+                    addu r30,r30,20         ; restaura la pila
+                    stop
+;-------------------------------------------------------------------------------				
+
+nFiltrados:         ld r20,r30,r0           ; oper
+                    ld r29,r0,0             ; nF inicializado
+
+comp:               cmp r7,r20,r0           ; compara oper con 0
+                    bb1 eq, r7, mayorigual  ; oper=0
+                    cmp r7,r20,r0           ; compara oper con 0
+                    bb1 gt, r7, mayorigual  ; mayor que 0
+                    cmp r7,r20,r0           ; compara oper con 0
+                    bb0 gt, r7, menorcero   ; menor que 0
+
+mayorigual:         or r29,r20,r20          ; nF=oper
+                    br fin                  ; final
+
+menorcero:          subu r29,r29,1          ; r29=r29-1
+                    cmp r7,r29,r0           ; compara r29 con 0
+                    bb0 gt, r7, asignarcero ; nF menor que 0;
+                    br fin                  ; final
+
+asignarcero:        or r29,r0,r0            ; nF=0
+                    br fin                  ; final
+
+fin:                st r29,r0,0             ; nF a memoria
+                    jmp(r1)                 ; salta a r1 y se acaba
+
+;-------------------------------------------------------------------------------
+
+ActualizaFiltro:    ld r20,r30,0            ; matriz3x3
+                    ld r21,r30,4            ; vector
+                    ld r2,r21,0             ; num
+                    ld r3,r21,4             ; denom
+                    addu r10,r0,9           ; dim
+                    cmp r7,r2,r0            ; comp num=0
+                    bb1 eq, r7, finAct      ; salta a fin
+                    cmp r7,r3,r0            ; denom=0
+                    bb1 eq, r7, finAct      ; salta a fin
+
+bucleAct:           cmp r7,r10,r0           ; dim=0
+                    bb1 eq, r7, finAct      ; salta a finAct
+                    ld r5,r20,0             ; carga elemento
+                    muls r5,r5,r2           ; mult
+                    divs r5,r5,r3           ; div
+                    st r5,r20,0             ; guarda elem
+                    addu r20,r20,4          ; desplaza sig elem
+                    subu  r10,r10,1         ; dim--
+                    br bucleAct             ; bucle 
+
+finAct:             jmp(r1)                 ; salta a r1 y se acaba
+
+;-------------------------------------------------------------------------------
+
+Comp:               or r28,r0,0             ; acumulador de diferencias
+                    ld r20,r30,0            ; IM1
+                    ld r2,r20,0             ; filasIM
+                    ld r3,r20,4             ; colIM
+                    mulu r6,r2,r3           ; dimension (numero elementos)
+                    addu r20,r20,8          ; primer elemento IM1
+                    ld r21,r30,4            ; IM2
+                    addu r21,r21,8          ; primer elemento IM2
+                
+bucleComp:          cmp r7,r6,r0            ; compara si dim=0
+                    bb1 eq, r7, finRecor    ; se acaban los recorridos de ambas matrices
+                    ld.bu r4,r20,0          ; elemento IM1
+                    ld.bu r5,r21,0          ; elemento IM2
+                    subu r25,r4,r5          ; resta elem IM1 - elem  IM2
+                    mulu r26,r25,r25        ; eleva al cuadrado la resta
+                    addu r28,r28,r26        ; resultado + acumulador de diferencias
+                    addu r20,r20,1          ; siguiente elemento IM1
+                    addu r21,r21,1          ; siguiente elemento IM2
+                    subu r6,r6,1            ; reduce en 1 la dimension
+                    br bucleComp            ; vuelve al bucle
+
+finRecor:           mulu r6,r2,r3           ; se actualiza la dimension al n-elementos
+                    divs r29,r28,r6         ; divide diferencias entre numero de elementos
+                    jmp(r1)                 ; final
+
+;-------------------------------------------------------------------------------
+
+ValorPixel:         ld r20,r30,0            ; carga SubImg
+                    ld r21,r30,4            ; carga MFiltro
+                    addu r10,r0,9           ; tamaño matrices
+                    or r29,r0,0             ; ACC=retorno
+
+bucleVal:           cmp r7,r10,r0           ; tamaño=0
+                    bb1 eq, r7, finVal      ; finaliza
+                    ld.bu r2,r20,0          ; elemento SubImg
+                    ld r3,r21,0             ; elemento MFiltro
+                    muls r25,r2,r3          ; elem SubImg * elem MFiltro
+                    add r29,r29,r25         ; actualiza ACC
+                    addu r20,r20,1          ; sig elem de SubImg
+                    addu r21,r21,4          ; sig elem de MFiltro
+                    subu r10,r10,1          ; tamaño--
+                    br bucleVal             ; vuelve al bucle
+
+finVal:             jmp(r1)                 ; fin 
+
+;-------------------------------------------------------------------------------
+
+SubMatriz:          ld r20,r30,0            ; carga Imagen
+                    ld r2,r20,0	            ; M=Filas
+                    ld r3,r20,4	            ; N=Columnas
+                    ld r21,r30,4	        ; carga subMatriz
+                    ld r4,r30,8	            ; carga i (fila)
+                    ld r5,r30,12	        ; carga j (columna)
+                    addu r20,r20,8	        ; primer elemento de Imagen
+                    addu r21,r21,0	        ; primer elemento de SubMatriz
+                    subu r10,r2,1	        ; M-1
+                    subu r11,r3,1	        ; N-1
+                    addu r22,r20,r5         ; elemento del numero de columna del elemento I(i,j)
+                    addu r25,r0,9	        ; dimension de submatriz
+                    or r6,r4,0	            ; copia de i
+
+bucleValorIJ:       cmp r7,r6,r0            ; compara el desplazamiento de fila con 0
+                    bb1 eq, r7, valorIJ     ; consigue el valor de I(i,j)
+                    addu r22,r22,r3         ; aumenta la fila (misma columna)
+                    subu r6,r6,1	        ; reduce en 1 el desplazamiento de fila
+                    br bucleValorIJ	        ; vuelve a aumentar la fila
+
+valorIJ:            ld.bu r8,r22,0	        ; valor de I(i,j)                   
+
+                    cmp r7,r4,r0            ; compara i con 0
+                    bb1 eq, r7, borde	    ; salta al caso de estar en el borde
+                    cmp r7,r4,r10	        ; compara i con M-1
+                    bb1 eq, r7, borde	    ; salta al caso de estar en el borde
+                    cmp r7,r5,r0            ; compara j con 0
+                    bb1 eq, r7, borde	    ; salta al caso de estar en el borde
+                    cmp r7,r5,r11           ; compara j con N-1
+                    bb1 eq, r7, borde       ; salta al caso de estar en el borde
+                    addu r17,r0,3	        ; contador de filas de submatriz
+                    subu r12,r22,r3         ; elemento central 1a fila
+
+bucleMatriz:        cmp r7,r17,r0           ; compara contador con 0
+                    bb1 eq,r7, finSub	    ; se acaba, submatriz llena                    
+                    subu r13,r12,1	        ; elemento izq.
+                    ld.bu r8,r13,0	        ; carga elemento de la izq.
+                    st.b r8,r21,0	        ; lo guarda en la submatriz
+                    ld.bu r8,r12,0          ; carga elemento central
+                    st.b r8,r21,1	        ; lo guarda en la submatriz
+                    addu r14,r12,1          ; elemento derecho
+                    ld.bu r8,r14,0	        ; carga elemento derecho
+                    st.b r8,r21,2	        ; lo guarda en la submatriz
+                    addu r21,r21,3	        ; siguiente fila de submatriz (para almacenar)
+                    addu r12,r12,r3         ; se mueve a siguiente fila de la imagen
+                    subu r17,r17,1          ; contador de filas se reduce
+                    br bucleMatriz	        ; en bucle hasta que complete la submatriz
+
+borde:              cmp r7,r25,r0           ; compara tamaño con 0
+                    bb1 eq, r7, finSub	    ; llena la submatriz y se acaba
+                    st.b r8,r21,0	        ; almacena I(i,j) donde estaba el elemento
+                    addu r21,r21,1	        ; siguiente elemento
+                    subu r25,r25,1	        ; reduce el tamaño
+                    br borde	            ; almacena valor en bucle hasta que se acaba la matriz
+
+finSub:             jmp(r1)                 ; fin
+
+;-------------------------------------------------------------------------------
+
+FilPixel:           PUSH(r1)                ; guarda la direccion de retorno
+                    PUSH(r31)               ; guarda el marco de pila
+                    or r31,r30,r30          ; guardar marco de FilPixel
+                    subu r30,r30,12	        ; guarda espacio para la subimagen
+                    or r10,r30,r30          ; guarda referencia a subimagen 
+                    ld r2,r31,8	            ; r2=Imagen
+                    ld r3,r31,12            ; r3=i
+                    ld r4,r31,16            ; r4=j
+                    PUSH(r4)                ; mete j en la pila
+                    PUSH(r3)                ; mete i en la pila
+                    PUSH(r10)               ; mete submatriz en la pila
+                    PUSH(r2)                ; mete imagen en la pila
+                    bsr SubMatriz           ; llama a SubMatriz con los parametros dados
+                    addu r30,r30,16         ; eliminar de la pila los parametros
+                    or r10,r30,r30          ; guarda referencia a subimagen
+                    ld r9,r31,20            ; r9=MFiltro
+                    PUSH(r9)                ; mete MFiltro en la pila
+                    PUSH(r10)               ; mete subimagen en la pila
+                    bsr ValorPixel          ; llama a ValorPixel con los parametros dados
+                    addu r30,r30,8          ; eliminar de la pila los parametros
+                    ld r9,r31,20	        ; guarda referencia a mfiltro  
+                    addu r20,r0,0	        ; peso de mfiltro inicializado
+                    addu r21,r0,9	        ; contador de elementos de subimagen
+
+buclema:            cmp r7,r21,r0           ; compara contador con 0
+                    bb1 eq, r7, peso        ; peso calculado
+                    ld r8,r9,0              ; carga elemento de mfiltro
+                    addu r20,r20,r8         ; peso+=elem
+                    addu r9,r9,4            ; siguiente elemento
+                    subu r21,r21,1          ; contador--
+                    br buclema              ; bucle
+
+peso:               cmp r7,r20,r0           ; compara peso con 0
+                    bb1 eq, r7, asignaruno	; salta a asignar 1 al peso
+                    br pixel                ; salta al resto del programa
+
+asignaruno:         addu r20,r0,1           ; asigna 1 a peso
+                    br pixel                ; salta al resto del programa
+
+pixel:              divs r29,r29,r20        ; divide r29 (ValorPixel) entre el peso
+                    cmp r7,r29,r0           ; compara r29 con 0
+                    bb0 gt, r7, ponercero   ; r29 menor que 0 ==> asigna 0
+                    addu r28,r0,255         ; registro con valor de 255
+                    cmp r7,r29,r28          ; compara r29 con 255
+                    bb1 gt, r7, poneruno    ; r29 mayor que 255 ==> asigna 255
+                    br finFilPixel	        ; salta al final de la subrutina
+
+ponercero:          addu r29,r0,r0          ; r29=0
+                    br finFilPixel          ; fin del programa
+
+poneruno:           addu r29,r0,r28         ; r29=255
+                    br finFilPixel          ; fin del programa
+
+finFilPixel:        or r30,r31,r31          ; quita la subimagen
+                    POP(r31)                ; restablece pila
+                    POP(r1)                 ; restablece pila
+                    jmp(r1)                 ; fin 
+
+;-------------------------------------------------------------------------------
+
+Filtro:             PUSH(r1)                ; guarda la direccion de retorno
+                    PUSH(r31)               ; guarda el marco de pila
+                    or r31,r30,r30          ; guardar marco de Filtro
+                    ld r20,r31,8            ; carga Imagen
+                    ld r21,r20,0            ; carga M
+                    ld r22,r20,4            ; carga N
+                    ld r10,r31,12           ; carga ImFiltrada
+                    st r21,r10,0            ; introduce M en el primer campo de ImFiltrada
+                    st r22,r10,4            ; introduce N en el segundo campo de ImFiltrada
+                    muls r9,r21,r22	        ; numero de elementos de Imagen
+                    ld r11,r31,16           ; carga MFiltro
+                    addu r15,r0,0           ; inicializa 'i'
+                    addu r16,r0,0           ; inicializa 'j'
+                    subu r23,r22,1          ; N-1
+                    addu r25,r10,8          ; primer elemento de ImFiltrada
+                    subu r30,r30,8          ; guarda espacio para contadores
+                    st r9,r31,-4	        ; guarda contador de Imagen en pila
+                    st r25,r31,-8           ; guarda contador de ImFiltrada
+
+bucleFil:           cmp r7,r9,r0            ; compara contador de elementos con 0
+                    bb1 eq, r7, finFiltro	; fin de la subrutina
+                    PUSH(r11)               ; mete MFiltro en la pila
+                    PUSH(r16)               ; mete 'j' en la pila
+                    PUSH(r15)               ; mete 'i' en la pila
+                    PUSH(r20)               ; mete Imagen en la pila
+                    bsr FilPixel            ; llama a FilPixel con los parametros dados
+                    POP(r20)                ; saca de pila
+                    POP(r15)                ; saca de pila
+                    POP(r16)                ; saca de pila
+                    POP(r11)                ; saca de pila
+                    ld r20,r31,8            ; carga referencia a Imagen
+                    ld r11,r31,16           ; carga referencia a MFiltro
+                    ld r10,r31,12           ; carga ImFiltrada (nuevamente)
+                    ld r25,r31,-8           ; carga numero de elemento de ImFiltrada
+                    st.b r29,r25,0          ; mete pixel filtrado en ImFiltrada
+                    addu r25,r25,1          ; incrementa elemento filtrado
+                    st r25,r31,-8           ; guarda contador 
+                    cmp r7,r16,r23          ; compara 'j' con N-1
+                    bb1 eq, r7, cambIJ      ; salta a modificacion de IJ
+                    addu r16,r16,1          ; aumenta 'j'
+continuarbucle:     ld r9,r31,-4            ; carga contador
+                    subu r9,r9,1            ; avanza en los elementos de Imagen
+                    st r9,r31,-4            ; guarda contador
+                    br bucleFil	            ; bucle 
+                    
+cambIJ:             addu r16,r0,0           ; j=0
+                    addu r15,r15,1          ; i++
+                    br continuarbucle       ; continua por la parte del bucle que debe
+
+finFiltro:          or r30,r31,r31          ; restablece marco
+                    POP(r31)                ; restablece pila
+                    POP(r1)                 ; restablece pila
+                    jmp(r1)                 ; fin 
+
+;-------------------------------------------------------------------------------
+
+FiltRec:            PUSH(r1)                ; guarda direccion de retorno
+                    PUSH(r31)               ; guarda marco de pila
+                    or r31,r30,r30          ; guarda marco de FiltRec
+                    ld r20,r31,8            ; carga ImagenIn
+                    ld r2,r20,0             ; carga M
+                    ld r3,r20,4             ; carga N
+                    muls r4,r2,r3           ; MxN
+                    addu r5,r0,4            ; r5=4
+                    divs r4,r4,r5           ; r4=parte entera de dividir por 4
+                    muls r5,r4,r5           ; r5=parte entera de la division x 4
+                    addu r5,r5,4            ; exceso para alinear a palabra
+                    addu r5,r5,8            ; elementos a exceso + M + N
+                    subu r30,r30,r5         ; reserva de espacio para ImagenTmp
+                    PUSH(r5)                ; guarda tamaño de ImagenTmp como variable local
+                    ld r21,r31,12           ; carga ImagenOut
+                    ld r22,r31,16           ; carga Mfiltro
+                    PUSH(r22)               ; mete MFiltro en pila
+                    PUSH(r21)               ; mete ImagenOut en pila
+                    PUSH(r20)               ; mete ImagenIn en pila
+                    bsr Filtro              ; llama a Filtro con los parámetros dados
+                    addu r30,r30,12         ; restaura la pila
+                    ld r22,r31,16           ; vuelve a cargar MFiltro
+                    ld r23,r31,20           ; carga ModMFiltro
+                    PUSH(r23)               ; mete ModMFiltro en pila
+                    PUSH(r22)               ; mete MFiltro en pila
+                    bsr ActualizaFiltro     ; llama a ActualizaFiltro con los parámetros dados
+                    addu r30,r30,8          ; restaura la pila
+                    POP(r5)                 ; carga tamaño total de ImagenTmp
+                    subu r5,r5,8            ; r5=numero de elementos de Imagen
+                    or r10,r30,r0           ; carga ref. ImagenTmp
+                    ld r21,r31,12           ; carga ImagenOut
+                    ld r2,r21,0             ; carga M
+                    ld r3,r21,4             ; carga N
+                    st r2,r10,0             ; copia M
+                    st r3,r10,4             ; copia N
+                    addu r15,r21,8          ; primer elemento de ImagenOut
+                    addu r16,r10,8          ; primer elemento de ImagenTmp
+                    
+copiaATmp:          cmp r7,r5,r0            ; cont. elementos=0
+                    bb1 eq, r7, paso5       ; salta a la siguiente parte del codigo
+                    ld.bu r17,r15,0         ; carga elemento de ImagenOut
+                    st.b r17,r16,0          ; guarda elemento en ImagenTmp
+                    addu r15,r15,1          ; siguiente elemento de ImagenOut
+                    addu r16,r16,1          ; siguiente elemento de ImagenTmp
+                    subu r5,r5,1            ; contador--
+                    br copiaATmp            ; vuelve al bucle
+
+paso5:              subu r11,r0,1           ; oper=-1
+                    PUSH(r11)               ; mete oper en pila
+                    bsr nFiltrados          ; llama a nFiltrados
+                    addu r30,r30,4          ; restaura la pila
+                    cmp r7,r29,r0           ; compara retorno de nFiltrados con 0
+                    bb1 eq, r7, nfilmenos1  ; asigna -1 a nF
+                    ld r20,r31,8            ; carga ImagenIn
+                    ld r21,r31,12           ; carga ImagenOut
+                    PUSH(r21)               ; mete ImagenOut en pila
+                    PUSH(r20)               ; mete ImagenIn en pila
+                    bsr Comp                ; llama a Comp
+                    addu r30,r30,8          ; restaura la pila
+                    ld r24,r31,24           ; carga NCambios
+                    cmp r7,r29,r24          ; compara retorno de Comp con NCambios
+                    bb1 lt, r7, finFiltRec  ; finaliza el programa
+                    or r20,r30,r0           ; carga ImagenTmp
+                    ld r21,r31,12           ; carga ImagenOut
+                    ld r22,r31,16           ; carga MFiltro
+                    ld r23,r31,20           ; carga ModMFiltro
+                    ld r24,r31,24           ; carga NCambios
+                    PUSH(r24)               ; mete NCambios en pila
+                    PUSH(r23)               ; mete ModMFiltro en pila
+                    PUSH(r22)               ; mete MFiltro en pila
+                    PUSH(r21)               ; mete ImagenOut en pila
+                    PUSH(r20)               ; mete ImagenTmp en pila
+                    bsr FiltRec             ; llamada recursiva
+                    addu r30,r30,20         ; restaura pila
+                    br finFiltRec           ; salta a final
+
+nfilmenos1:         subu r29,r0,1           ; nF=-1
+                    br finFiltRec           ; finaliza el programa
+
+finFiltRec:         or r30,r31,r31          ; restablece marco
+                    POP(r31)                ; restablece pila
+                    POP(r1)                 ; restablece pila
+                    jmp(r1)                 ; fin 
+
+; ------------------------- FIN DEL PROGRAMA -------------------------

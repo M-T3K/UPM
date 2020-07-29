@@ -1,0 +1,46 @@
+CONTENIDO DE LA TABLA #1: 
+----------------
+* LEXEMA: 'a'
+* TIPO: 'TYPEINT'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'b'
+* TIPO: 'TYPEINT'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'c'
+* TIPO: 'TYPEINT'
+* POS: '3'
+* DESPLZ: '2'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'divide'
+* TIPO: 'TYPEINT'
+* POS: '4'
+* DESPLZ: '3'
+* NUMPARAMS: '2'
+* PARAMTYPES: '[TYPEINT TYPEINT]'
+-------------------------
+CONTENIDO DE LA TABLA #2: 
+----------------
+* LEXEMA: 'num1'
+* TIPO: 'TYPEINT'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'num2'
+* TIPO: 'TYPEINT'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------

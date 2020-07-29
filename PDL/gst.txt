@@ -1,0 +1,57 @@
+Terminales = { lambda boolean do function if input int print return string var while entero cadena id /= = , ; ( ) { } / || < eof }
+NoTerminales = { P UI VI EI J SC D T Z ZI F A AI C S E L LI W U V B O OI M MI }
+Axioma = P
+Producciones = {
+P -> D P                            ////1
+P -> F P                            ////2
+P -> S P                            ////3
+P -> eof                            ////4
+D -> var T id ;                     ////5
+T -> int                            ////6
+T -> string                         ////7
+T -> boolean                        ////8
+F -> function J id ( A ) { C }      ////9
+J -> T                              ////10
+J -> lambda                         ////11
+A -> lambda                         ////12
+A -> T id AI                        ////13
+AI -> lambda                        ////14
+AI -> , T id AI                     ////15
+C -> D C                            ////16
+C -> S C                            ////17
+C -> lambda                         ////18
+S -> E ;                            ////19
+S -> if ( E ) B                     ////20
+B -> { C }                          ////21
+S -> print ( E ) ;                  ////22
+S -> input ( E ) ;                  ////23
+S -> return E ;                     ////24
+L -> lambda                         ////25
+L -> id LI                          ////26
+LI -> lambda                        ////27
+LI -> , id LI                       ////28
+E -> lambda                         ////29
+SC -> do { C } W                    ////30
+W -> while ( E ) ;                  ////31
+E -> Z EI                           ////32
+EI -> lambda                        ////33
+EI -> || Z EI                       ////34
+Z -> U ZI                           ////35
+ZI -> lambda                        ////36
+ZI -> < U ZI                        ////37
+U -> O UI                           ////38
+UI -> lambda                        ////39
+UI -> / O UI				        ////40
+O -> M OI				            ////41
+OI -> lambda				        ////42
+OI -> /= M OI				        ////43
+M -> V MI				            ////44
+MI -> lambda				        ////45
+MI -> = V MI                        ////46
+V -> id VI                          ////47
+V -> entero                         ////48
+V -> cadena                         ////49
+V -> ( E )                          ////50
+VI -> ( L )                         ////51
+VI -> lambda                        ////52
+}

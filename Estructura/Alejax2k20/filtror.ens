@@ -1,0 +1,457 @@
+LEA:     MACRO (reg,ETIQ)
+         or reg,r0,low(ETIQ)
+         or.u reg,reg,high(ETIQ)
+         ENDMACRO
+            
+LOAD:    MACRO(ra, eti)
+         LEA(ra, eti)        ; rA <- &eti
+         ld ra, ra, 0        ; rA <- *rA
+         ENDMACRO
+
+PUSH:    MACRO (reg)
+         subu r30,r30,4
+         st reg,r30,r0
+         ENDMACRO
+
+POP:     MACRO (reg)
+         ld reg,r30,r0
+         addu r30,r30,4
+         ENDMACRO
+
+
+; Pruebas
+
+; PRUEBAS
+
+PPAL1:  LEA(r30, 65000)
+        LEA(r20, FILPXLF1)	; r20 <- &MFiltro
+        or r22, r0, 2           ; I = 2
+        or r21, r0, 3           ; J = 3
+        LEA(r23, FILPXLI1)	; r23 <- &Imagen
+        ; Preparamos la llamada 
+        PUSH(r20)
+        PUSH(r21)
+        PUSH(r22)
+        PUSH(r23)
+        bsr FilPixel ; FilPixel(&Imagen, i, j, &MFiltro)
+        POP(r23)
+        POP(r22)
+        POP(r21)
+        POP(r20)
+        stop
+
+; DATOS FILPIXL
+
+org 0x14000
+        
+FILPXLI1:       data 5, 5
+                data 0x44332211, 0x03020155
+                data 0x22210504, 0x31252423
+                data 0x35343332, 0x44434241
+                data 0x00000045
+
+FILPXLF1:       data 0, 1,  0,  1, 0, 1
+                data 0, 1, -5, -5, 0, 1
+                data 0, 1,  0,  1, 0, 1
+
+
+
+
+
+
+
+
+org 0x00
+nF: data 4
+;oper: data -3
+
+;PpalnF: LEA(r30,65000)
+        ;or  r31,r30,0
+        ;add r27,r0,-4
+        ;PUSH(r27)
+        ;bsr nFiltrados
+        ;addu r30,r30,4
+        ;stop
+
+
+;nFiltrados
+nFiltrados: PUSH(r1)
+            ld r2,r30,4
+            cmp r3,r2,0
+            bb1 lt,r3,opmen0
+            st r2,r0,0
+            or r29,r2,0
+            br finF
+opmen0:     ld r2,r0,0
+            sub r2,r2,1
+            cmp r3,r2,0
+            bb1 lt,r3,nfmen0
+            st r2,r0,0
+            or r29,r2,0
+            br finF
+nfmen0:     st r0,r0,0
+            xor r29,r29,r29
+finF:       POP(r1)
+            jmp(r1)
+
+
+;SQRT
+Sqrt:       PUSH(r1)
+            ld r2,r30,4
+            cmp r3,r2,2
+            bb1 lt,r3,fin1Sqrt
+            or r4,r2,0;         r4=a
+            or r5,r0,1;         r5=b
+b_Sqrt:     sub r6,r4,r5
+            cmp r3,r6,1
+            bb1 le,r3,fin2Sqrt
+            add r4,r4,r5
+            divs r4,r4,2
+            divs r5,r2,r4
+            cmp r3,r5,r4
+            bb1 gt,r3,swpAB
+            br b_Sqrt
+swpAB:      or r6,r5,0
+            or r5,r4,0
+            or r4,r6,0
+            br b_Sqrt
+fin1Sqrt:   or r29,r2,0
+            br finSqrt
+fin2Sqrt:   or r29,r5,0
+finSqrt:    POP(r1)                        
+            jmp(r1)
+
+
+
+;ValorPixel
+ValorPixel: PUSH(r1)
+            ld r20,r30,4;       puntero a subimg
+            ld r21,r30,8;       puntero a matriz filtro
+            xor r29,r29,r29;    acumulador
+            or r2,r0,9;         contador de fin de subimg
+        ;     or r2,r2,r2
+        ;     add r2,r2,9
+bucVPix:    cmp r3,r2,0
+            bb1 eq,r3,finVPix
+            ld.bu r4,r20,0
+            ld r5,r21,0
+            ld r6,r21,4
+            mulu r7,r4,256
+            muls r7,r7,r5
+            divs r7,r7,r6
+            add r29,r29,r7
+            subu r2,r2,1
+            addu r20,r20,1
+            addu r21,r21,8;      aqui habia puesto 4 en vez de 8
+            br bucVPix
+finVPix:    divs r29,r29,256
+            ;or r29,r23,r0
+            POP(r1)
+            jmp(r1)
+
+
+
+;Comp
+Comp:       PUSH(r1)
+            ld r20,r30,4;       puntero a imagen 1
+            ld r21,r30,8;       puntero a imagen 2
+            xor r2,r2,r2;       acumulador de diferencias
+            ld r10,r20,0;       M imagen 1
+            ld r11,r21,0;       M imagen 2
+            ld r12,r20,4;       N imagen 1
+            ld r13,r21,4;       N imagen 2
+            mulu r14,r10,r12;   MxN imagen 1
+            mulu r15,r11,r13;   MxN imagen 2
+            addu r20,r20,8;      puntero a matriz 1
+            addu r21,r21,8;      puntero a matriz 2
+bucComp:    cmp r3,r14,0
+            bb1 eq,r3,finComp
+            ld.bu r4,r20,0;     elemento matriz 1
+            ld.bu r5,r21,0;     elemento matriz 2
+            sub r6,r4,r5;       pixel 1 - pixel 2
+            muls r6,r6,r6;      (pixel 1 - pixel 2)^2
+            addu r2,r2,r6;       
+            addu r20,r20,1
+            addu r21,r21,1
+            subu r14,r14,1
+            br bucComp
+finComp:    PUSH(r2)
+            bsr Sqrt
+            addu r30,r30,4
+            POP(r1)
+            jmp(r1)
+            
+
+
+;SubMatriz (Imagen, SubImg, i, j)
+SubMatriz:  PUSH(r1)
+            ld r20,r30,4        ;puntero a imagen
+            ld r21,r30,8        ;puntero a subimagen
+            ld r12,r20,0        ;M
+            ld r13,r20,4        ;N
+            ld r10,r30,12        ;i
+            ld r11,r30,16       ;j
+
+            subu r14,r10,1      ;i-1
+            subu r15,r11,1      ;j-1
+
+            xor r16,r16,r16     ;contador i
+            xor r17,r17,r17     ;contador j
+            addu r20,r20,8      ;puntero a matriz imagen
+
+            mulu r2,r13,r14     ;N x (i - 1)
+            addu r2,r2,r15      ;N x (i - 1) + (j - 1)
+            addu r20,r20,r2     ;avanzar puntero de imagen al primer elemento de matriz imagen
+            addu r22,r20,0      ;copia de inicializacion del puntero r20
+
+bucSM:      ld.bu r4,r20,0      ;cargo en r4 elemento a guardar
+            st.b r4,r21,0       ;guardo elemento en subimg
+
+            addu r17,r17,1      ;contador j++      
+            addu r20,r20,1      ;sig elemento de imagen
+            addu r21,r21,1      ;sig elemento de subimg
+            cmp r3,r17,3        ;si no se ha llegado al final de la fila, continua el bucle
+            bb1 lt,r3,bucSM
+
+            xor r17,r17,r17     ;contador j = 0
+            addu r16,r16,1      ;contador i++
+            or r20,r22,r0       ;reinicializo puntero a matriz imagen
+            mulu r13,r13,r16    ;N x i
+            addu r20,r20,r13    ;sig elemento de imagen 
+            cmp r3,r16,3        ;si no se ha llegado al final de la columna, continua el bucle
+            bb1 lt,r3,bucSM  
+            
+            POP(r1)
+            jmp(r1)             ;llegados a este punto, la submatriz deberia estar copiada por completo
+
+
+
+;FilPixel (Imagen, i, j, MFiltro)
+FilPixel:   PUSH(r1)            
+            PUSH(r31)
+            or r31,r30,0
+            subu r30,r30,12     ;marco de pila
+            ld r20,r31,8        ;puntero a Imagen
+            ld r21,r31,20       ;puntero a MFiltro
+            ld r10,r31,12       ;i(fila del pixel a filtrar de Imagen)
+            ld r11,r31,16       ;j(columna del pixel a filtrar de Imagen)
+            ld r12,r20,0        ;M(numero filas de Imagen)
+            sub r14,r12,1       ;M-1
+            ld r13,r20,4        ;N(numero columnas de Imagen)
+            sub r15,r13,1       ;N-1
+
+            cmp r3,r10,0        ;si i=0 entonces el pixel esta en el borde
+            bb1 eq,r3,bordePix
+            cmp r3,r10,r14      ;si i=M-1 entonces el pixel esta en el borde
+            bb1 eq,r3,bordePix
+            cmp r3,r11,0        ;si j=0 entonces el pixel esta en el borde
+            bb1 eq,r3,bordePix
+            cmp r3,r11,r15      ;si j=N-1 entonces el pixel esta en el borde
+            bb1 eq,r3,bordePix
+
+            addu r22,r30,0     ;guardar en r22 direccion de la parte del marco de pila donde ira subimg
+            PUSH(r21)        ;proteger en marco de pila r21
+
+            PUSH(r11)
+            PUSH(r10)
+            PUSH(r22)
+            PUSH(r20)
+            bsr SubMatriz
+            POP(r20)
+            POP(r22)
+            POP(r10)
+            POP(r11)
+            POP(r21)
+
+            PUSH(r21)
+            PUSH(r22)
+            bsr ValorPixel
+            addu r30,r30,8
+
+            cmp r3,r29,0
+            bb1 lt,r3,pixMenor
+            cmp r3,r29,255
+            bb1 gt,r3,pixMayor
+            br finFPIX
+
+pixMenor:   xor r29,r29,r29
+            br finFPIX
+
+pixMayor:   or r29,r0,255
+            br finFPIX
+
+bordePix:   mulu r2,r13,r10
+            addu r2,r2,r11
+            addu r20,r20,8      ;puntero a matriz Imagen
+            ld.bu r29,r20,r2
+
+finFPIX:    or r30,r31,0
+            POP(r31)
+            POP(r1)
+            jmp(r1)
+
+
+
+;Filtro (Imagen, ImFiltrada, MFiltro)
+Filtro:     PUSH(r1)            
+            PUSH(r31)
+            or r31,r30,0
+            ;subu r30,r30,32     ;marco de pila
+            ld r20,r31,8        ;puntero a Imagen
+            ld r21,r31,12       ;puntero a ImFiltrada
+            ld r22,r31,16       ;puntero a MFiltro
+            ld r10,r20,0        ;M(original)
+            ld r11,r20,4        ;N(original)
+            st r10,r21,0        ;guardar M(original) en M(IF)
+            st r11,r21,4        ;guardar N(original) en N(IF)
+            subu r10,r10,1      ;M-1
+            subu r11,r11,1      ;N-1
+            addu r21,r21,8      ;puntero a matriz ImFiltrada
+            addu r23,r20,8      ;puntero a matriz Imagen
+            xor r12,r12,r12     ;contador i
+            xor r13,r13,r13     ;contador j
+
+bucFil:     ;st r20,r30,0        ;proteger Imagen
+            ;st r21,r30,4        ;ImFiltrada
+            ;st r22,r30,8        ;MFiltro
+            ;st r23,r30,12       ;matriz Imagen
+            ;st r10,r30,16       ;M-1
+            ;st r11,r30,20       ;N-1
+            ;st r12,r30,24       ;i
+            ;st r13,r30,28       ;j
+
+            PUSH(r20)
+            PUSH(r21)
+            PUSH(r22)
+            PUSH(r23)
+            PUSH(r10)
+            PUSH(r11)
+            PUSH(r12)
+            PUSH(r13)
+            
+            PUSH(r22)           ;paso de parametros a la funcion
+            PUSH(r13)           ;
+            PUSH(r12)           ;
+            PUSH(r20)           ;
+            bsr FilPixel        ;llamada a la funcion que filtra el pixel
+            addu r30,r30,16     ;deshacer parametros de la funcion
+
+            POP(r13)
+            POP(r12)
+            POP(r11)
+            POP(r10)
+            POP(r23)
+            POP(r22)
+            POP(r21)
+            POP(r20)
+
+            st.b r29,r21,0      ;guardar pixel filtrado
+            addu r23,r23,1      ;actualizar a siguiente elemento de Imagen
+            addu r21,r21,1      ;actualizar a siguiente elemento de ImFiltrada
+            addu r13,r13,1      ;j++
+            cmp r3,r13,r11      ;si j <= N, entonces continua el bucle
+            bb1 lt,r3,bucFil
+            addu r12,r12,1      ;como j == N, entonces i++ y j=0
+            xor r13,r13,r13
+            cmp r3,r12,r10      ;si i <= M, entonces continua el bucle
+            bb1 lt,r3,bucFil
+
+finFil:     or r30,r31,0
+            POP(r31)
+            POP(r1)
+            jmp(r1)
+
+
+
+;FiltRec (ImagenIn, ImagenOut, MFiltro, NCambios)
+FiltRec:    PUSH(r1)            
+            PUSH(r31)
+            or r31,r30,0
+            ld r20,r31,8        ;puntero a ImagenIn
+            ld r10,r20,0        ;M (IN)
+            ld r11,r20,4        ;N (IN)
+            mulu r12,r10,r11    ;M x N (IN)
+            addu r13,r12,8      ;M x N + 4 + 4 (IN)
+
+            or r4,r0,4          ;ajuste por exceso del marco de pila
+            sub r5,r4,1         ;
+            add r13,r13,r5      ;
+            divs r13,r13,r4     ;
+            muls r13,r13,r4     ;
+
+            subu r30,r30,r13    ;marco de pila para ImagenTmp
+            ;addu r23,r30,0      ;puntero al espacio en la pila para ImagenTmp
+            ld r21,r31,12       ;puntero a ImagenOut
+            ld r22,r31,16       ;puntero a MFiltro
+
+            ;proteger variables
+
+            PUSH(r22)
+            PUSH(r21)
+            PUSH(r20)
+            bsr Filtro
+            addu r30,r30,12
+
+            or r24,r30,0        ;puntero a ImagenTmp
+            ld r21,r31,12       ;recargar variables
+            ld r20,r31,8        ;
+            ld r22,r31,16       ;
+            ld r23,r31,20       ;
+            ld r10,r21,0        ;
+            ld r11,r21,4        ;
+            sub r13,r13,8       ;M x N
+            
+            st r10,r24,0        ;guardar M en M (TMP)
+            st r11,r24,4        ;guardar N en N (TMP)
+
+            addu r21,r21,8      ;puntero a la matriz de ImagenOut
+            addu r24,r24,8      ;puntero a la matriz de ImagenTmp
+
+bucCopia:   ld.bu r2,r21,0      ;cargar pixel de ImagenOut
+            st.b r2,r24,0       ;guardar pixel de ImagenOut en el espacio en la pila de ImagenTmp
+            addu r21,r21,1      ;sig elemento ImagenOut
+            addu r24,r24,1      ;sig elemento ImagenTmp
+            sub r13,r13,1       ;M x N --
+            cmp r3,r13,0
+            bb1 gt,r3,bucCopia
+
+            sub r14,r0,1        ;-1
+            
+            PUSH(r14)           ;pasamos a nFiltrados oper < 0
+            bsr nFiltrados
+            addu r30,r30,4
+
+            ld r20,r31,8        ;recargar variables
+            ld r21,r31,12       ;
+
+            cmp r3,r29,0
+            bb1 eq,r3,nFcero
+
+            PUSH(r20)
+            PUSH(r21)
+            bsr Comp
+            addu r30,r30,8
+
+            or r20,r30,0        ;recargar variables
+            ld r21,r31,12       ;
+            ld r22,r31,16       ;
+            ld r23,r31,20       ;
+
+            cmp r3,r29,r23      ;si r29 < NCambios entonces fin
+            bb1 lt,r3,finFRec
+
+            PUSH(r23)
+            PUSH(r22)
+            PUSH(r21)
+            PUSH(r20)
+            bsr FiltRec
+            addu r30,r30,16
+
+            br finFRec
+
+nFcero:     sub r29,r0,1
+
+finFRec:    or r30,r31,0
+            POP(r31)
+            POP(r1)
+            jmp(r1)

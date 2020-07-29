@@ -1,0 +1,55 @@
+CONTENIDO DE LA TABLA #1: 
+----------------
+* LEXEMA: 'num1'
+* TIPO: 'TYPEINT'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'bool1'
+* TIPO: 'TYPEBOOL'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'str1'
+* TIPO: 'TYPESTR'
+* POS: '3'
+* DESPLZ: '2'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'saludo'
+* TIPO: 'TYPESTR'
+* POS: '4'
+* DESPLZ: '3'
+* NUMPARAMS: '1'
+* PARAMTYPES: '[TYPEINT]'
+-------------------------
+* LEXEMA: 'funcion2'
+* TIPO: 'TYPEINT'
+* POS: '5'
+* DESPLZ: '4'
+* NUMPARAMS: '1'
+* PARAMTYPES: '[TYPEBOOL]'
+-------------------------
+CONTENIDO DE LA TABLA #2: 
+----------------
+* LEXEMA: 'hola'
+* TIPO: 'TYPEINT'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+CONTENIDO DE LA TABLA #3: 
+----------------
+* LEXEMA: 'uno'
+* TIPO: 'TYPEBOOL'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------

@@ -1,0 +1,15 @@
+var int a;
+var int b;
+var int c;
+var string d;
+print ("Introduce el primer operando");
+input (a);
+print ("Introduce el segundo operando");
+input (b);
+function int divide (int num1, int num2)
+{
+	return num1/num2;
+}
+d = a;
+c = divide (a, b);
+print (c);

@@ -1,0 +1,41 @@
+CONTENIDO DE LA TABLA #1: 
+----------------
+* LEXEMA: 'texto'
+* TIPO: 'TYPESTR'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'imprime'
+* TIPO: ''
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '1'
+* PARAMTYPES: '[TYPESTR]'
+-------------------------
+* LEXEMA: 'pideTexto'
+* TIPO: ''
+* POS: '3'
+* DESPLZ: '2'
+* NUMPARAMS: '1'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'textoAux'
+* TIPO: 'TYPESTR'
+* POS: '4'
+* DESPLZ: '3'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+CONTENIDO DE LA TABLA #2: 
+----------------
+* LEXEMA: 'msg'
+* TIPO: 'TYPESTR'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+CONTENIDO DE LA TABLA #3: 
+----------------

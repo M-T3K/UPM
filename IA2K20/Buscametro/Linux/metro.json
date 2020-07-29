@@ -1,0 +1,271 @@
+{
+    "lines": [
+      {
+        "color": "green",
+        "nodes": [
+            {
+                "name": "Ikebukuro",
+                "x": 225,
+                "y": 95,
+                "rad": 10
+            },
+            {
+                "name": "Otsuka",
+                "x": 298,
+                "y": 95,
+                "rad": 7
+            },
+            {
+                "name": "Sugamo",
+                "x": 334,
+                "y": 95,
+                "rad": 7
+            },
+            {
+                "name": "Komagome",
+                "x": 371,
+                "y": 95,
+                "rad": 7
+            },
+            {
+                "name": "Tabata",
+                "x": 415,
+                "y": 114,
+                "rad": 10
+            },
+            {
+                "name": "Nishi-Nippori",
+                "x": 437,
+                "y": 134,
+                "rad": 7
+            },
+            {
+                "name": "Nippori",
+                "x": 443,
+                "y": 168,
+                "rad": 10
+            },
+            {
+                "name": "Uguisudani",
+                "x": 443,
+                "y": 197,
+                "rad": 7
+            },
+            {
+                "name": "Ueno",
+                "x": 443,
+                "y": 224,
+                "rad": 10
+            },
+            {
+                "name": "Okachimachi",
+                "x": 443,
+                "y": 256,
+                "rad": 7
+            },
+            {
+                "name": "Akihabara-Verde",
+                "x": 443,
+                "y": 285,
+                "rad": 10
+            },
+            {
+                "name": "Kanda",
+                "x": 443,
+                "y": 331,
+                "rad": 10
+            },
+            {
+                "name": "Tokyo-Verde",
+                "x": 443,
+                "y": 374,
+                "rad": 10
+            },
+            {
+                "name": "Yurakucho",
+                "x": 438,
+                "y": 412,
+                "rad": 7
+            },
+            {
+                "name": "Shimbashi",
+                "x": 412,
+                "y": 437,
+                "rad": 7
+            }, 
+            {
+                "name": "Hamamatsucho",
+                "x": 382,
+                "y": 467,
+                "rad": 10
+            },
+            {
+                "name": "Tamachi",
+                "x": 349,
+                "y": 500,
+                "rad": 7
+            },
+            {
+                "name": "Shinagawa",
+                "x": 313,
+                "y": 535,
+                "rad": 10
+            },
+            {
+                "name": "Osaki",
+                "x": 250,
+                "y": 545,
+                "rad": 10
+            },
+            {
+                "name": "Gotanda",
+                "x": 209,
+                "y": 545,
+                "rad": 7
+            },  
+            {
+                "name": "Meguro",
+                "x": 172,
+                "y": 545,
+                "rad": 7
+            },
+            {
+                "name": "Ebisu",
+                "x": 119,
+                "y": 520,
+                "rad": 7
+            },
+            {
+                "name": "Shibuya",
+                "x": 117,
+                "y": 462,
+                "rad": 7
+            },
+            {
+                "name": "Harajuku",
+                "x": 117,
+                "y": 415,
+                "rad": 7
+            },
+            {
+                "name": "Yoyogi-Verde",
+                "x": 117,
+                "y": 336,
+                "rad": 10
+            },
+            {
+                "name": "Shinjuku-Verde",
+                "x": 117,
+                "y": 297,
+                "rad": 10
+            },
+            {
+                "name": "Shin-Okubo",
+                "x": 117,
+                "y": 215,
+                "rad": 7
+            },
+            {
+                "name": "Takadanobaba",
+                "x": 123,
+                "y": 172,
+                "rad": 7
+            },
+            {
+                "name": "Mejiro",
+                "x": 162,
+                "y": 134,
+                "rad": 7
+            }
+        ]
+      },
+      {
+        "color": "yellow",
+        "nodes": [
+            {
+                "name": "Shinjuku-Amarillo",
+                "x": 70,
+                "y": 297,
+                "rad": 10
+            },
+            {
+                "name": "Yoyogi-Amarillo",
+                "x": 70,
+                "y": 336,
+                "rad": 10
+            },
+            {
+                "name": "Sendagaya",
+                "x": 143,
+                "y": 383,
+                "rad": 7
+            },
+            {
+                "name": "Shinanomachi",
+                "x": 190,
+                "y": 383,
+                "rad": 7
+            },
+            {
+                "name": "Yotsuya",
+                "x": 215,
+                "y": 361,
+                "rad": 7
+            },  
+            {
+                "name": "Ichigaya",
+                "x": 235,
+                "y": 342,
+                "rad": 7
+            },
+            {
+                "name": "Iidabashi",
+                "x": 253,
+                "y": 324,
+                "rad": 7
+            },
+            {
+                "name": "Suidobashi",
+                "x": 272,
+                "y": 305,
+                "rad": 7
+            },
+            {
+                "name": "Ochanomizu-Amarillo",
+                "x": 301,
+                "y": 285,
+                "rad": 10
+            },    
+            {
+                "name": "Akihabara-Amarillo",
+                "x": 420,
+                "y": 285,
+                "rad": 10
+            }
+        ]
+      },
+      {
+        "color": "red",
+        "nodes": [
+            {
+                "name": "Shinjuku-Rojo",
+                "x": 92,
+                "y": 297,
+                "rad": 10
+            },
+            {
+                "name": "Ochanomizu-Rojo",
+                "x": 321,
+                "y": 263,
+                "rad": 10
+            },
+            {
+                "name": "Tokyo-Rojo",
+                "x": 467,
+                "y": 374,
+                "rad": 10
+            }        
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,15 @@
+var string texto;
+function imprime (string msg)
+{
+	print ("Mensage introducido:");
+	print (msg);
+}
+function pideTexto ()
+{
+	print ("Introduce un texto");
+	input (texto);
+}
+pideTexto();
+var string textoAux;
+textoAux = texto;
+imprime (textoAux);

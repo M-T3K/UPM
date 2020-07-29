@@ -1,0 +1,65 @@
+<DECLVAR, >
+<TYPEINT, >
+<ID,0>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEINT, >
+<ID,1>
+<SEPSCOM, >
+<ID,0>
+<OPASSIGN, >
+<VALINT,3>
+<SEPSCOM, >
+<ID,1>
+<OPASSIGN, >
+<ID,0>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEBOOL, >
+<ID,2>
+<SEPSCOM, >
+<ID,2>
+<OPASSIGN, >
+<ID,0>
+<OPLT, >
+<ID,1>
+<SEPSCOM, >
+<CONDIF, >
+<SEPLPAR, >
+<ID,2>
+<SEPRPAR, >
+<SEPLCURL, >
+<ID,>
+<OPASSIGN, >
+<VALINT,1>
+<SEPSCOM, >
+<SEPRCURL, >
+<CONDIF, >
+<SEPLPAR, >
+<ID,1>
+<OPLT, >
+<ID,0>
+<SEPRPAR, >
+<SEPLCURL, >
+<ID,>
+<OPDIVASSIGN, >
+<VALINT,4>
+<SEPSCOM, >
+<SEPRCURL, >
+<ID,0>
+<OPASSIGN, >
+<ID,0>
+<OPDIV, >
+<ID,1>
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<ID,0>
+<SEPRPAR, >
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<ID,1>
+<SEPRPAR, >
+<SEPSCOM, >
+<EOF, >

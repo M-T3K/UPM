@@ -1,0 +1,14 @@
+var int num1;
+var boolean bool1;
+var string str1;
+
+function string saludo(int hola) {
+    return "adios";
+}
+
+function int funcion2 (boolean uno) {
+    return 2;
+}
+
+saludo(num1);
+funcion2(bool1);

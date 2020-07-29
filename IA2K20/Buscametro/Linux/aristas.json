@@ -1,0 +1,425 @@
+[
+    {
+        "Origen": "Osaki",
+        "Destino": "Shinagawa",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.3537,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Shinagawa",
+        "Destino": "Tamachi",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 2.0713,
+            "Tiempo": 4
+        }
+    },
+    {
+        "Origen": "Tamachi",
+        "Destino": "Hamamatsucho",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.3785,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Hamamatsucho",
+        "Destino": "Shimbashi",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.2279,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Shimbashi",
+        "Destino": "Yurakucho",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.0289,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Yurakucho",
+        "Destino": "Tokyo-Verde",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.80099,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Tokyo-Verde",
+        "Destino": "Tokyo-Rojo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Tokyo-Verde",
+        "Destino": "Kanda",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.2276,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Kanda",
+        "Destino": "Akihabara-Verde",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.7603,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Akihabara-Verde",
+        "Destino": "Akihabara-Amarillo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Akihabara-Verde",
+        "Destino": "Okachimachi",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.0248,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Okachimachi",
+        "Destino": "Ueno",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.77845,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Ueno",
+        "Destino": "Uguisudani",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.81353,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Uguisudani",
+        "Destino": "Nippori",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.0006,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Nippori",
+        "Destino": "Nishi-Nippori",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.53102,
+            "Tiempo": 1
+        }
+    },
+    {
+        "Origen": "Nishi-Nippori",
+        "Destino": "Tabata",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.90284,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Tabata",
+        "Destino": "Komagome",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.2582,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Komagome",
+        "Destino": "Sugamo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.78079,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Sugamo",
+        "Destino": "Otsuka",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.0265,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Otsuka",
+        "Destino": "Ikebukuro",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.5735,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Ikebukuro",
+        "Destino": "Mejiro",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.0012,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Mejiro",
+        "Destino": "Takadanobaba",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.98685,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Takadanobaba",
+        "Destino": "Shin-Okubo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.3109,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Shin-Okubo",
+        "Destino": "Shinjuku-Verde",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.2904,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Shinjuku-Verde",
+        "Destino": "Shinjuku-Rojo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Shinjuku-Verde",
+        "Destino": "Shinjuku-Amarillo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Shinjuku-Rojo",
+        "Destino": "Shinjuku-Amarillo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Shinjuku-Verde",
+        "Destino": "Yoyogi-Verde",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.74629,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Yoyogi-Verde",
+        "Destino": "Yoyogi-Amarillo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Yoyogi-Verde",
+        "Destino": "Harajuku",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.4243,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Harajuku",
+        "Destino": "Shibuya",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.3602,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Shibuya",
+        "Destino": "Ebisu",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.4726,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Ebisu",
+        "Destino": "Meguro",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.5076,
+            "Tiempo": 3
+        }
+    },
+    {
+        "Origen": "Meguro",
+        "Destino": "Gotanda",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.1206,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Gotanda",
+        "Destino": "Osaki",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.81462,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Shinjuku-Rojo",
+        "Destino": "Ochanomizu-Rojo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 5.9347,
+            "Tiempo": 10
+        }
+    },
+    {
+        "Origen": "Ochanomizu-Rojo",
+        "Destino": "Ochanomizu-Amarillo",
+        "Peso": {
+            "Transbordo": 1,
+            "Distancia": 0,
+            "Tiempo": 0
+        }
+    },
+    {
+        "Origen": "Ochanomizu-Rojo",
+        "Destino": "Tokyo-Rojo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 2.031,
+            "Tiempo": 4
+        }
+    },
+    {
+        "Origen": "Shinjuku-Amarillo",
+        "Destino": "Yoyogi-Amarillo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.74629,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Yoyogi-Amarillo",
+        "Destino": "Sendagaya",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.85471,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Sendagaya",
+        "Destino": "Shinanomachi",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.82204,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Shinanomachi",
+        "Destino": "Yotsuya",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.1223,
+            "Tiempo": 1
+        }
+    },
+    {
+        "Origen": "Yotsuya",
+        "Destino": "Ichigaya",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.72299,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Ichigaya",
+        "Destino": "Iidabashi",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.498,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Iidabashi",
+        "Destino": "Suidobashi",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.76761,
+            "Tiempo": 1
+        }
+    },
+    {
+        "Origen": "Suidobashi",
+        "Destino": "Ochanomizu-Amarillo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 1.0953,
+            "Tiempo": 2
+        }
+    },
+    {
+        "Origen": "Ochanomizu-Amarillo",
+        "Destino": "Akihabara-Amarillo",
+        "Peso": {
+            "Transbordo": 0,
+            "Distancia": 0.72199,
+            "Tiempo": 2
+        }
+    }
+]

@@ -1,0 +1,56 @@
+<DECLVAR, >
+<TYPESTR, >
+<ID,0>
+<SEPSCOM, >
+<DECLFUNC, >
+<ID,1>
+<SEPLPAR, >
+<TYPESTR, >
+<ID,0>
+<SEPRPAR, >
+<SEPLCURL, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"Mensage introducido:">
+<SEPRPAR, >
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<ID,>
+<SEPRPAR, >
+<SEPSCOM, >
+<SEPRCURL, >
+<DECLFUNC, >
+<ID,2>
+<SEPLPAR, >
+<SEPRPAR, >
+<SEPLCURL, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"Introduce un texto">
+<SEPRPAR, >
+<SEPSCOM, >
+<IOIN, >
+<SEPLPAR, >
+<ID,>
+<SEPRPAR, >
+<SEPSCOM, >
+<SEPRCURL, >
+<ID,2>
+<SEPLPAR, >
+<SEPRPAR, >
+<SEPSCOM, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,3>
+<SEPSCOM, >
+<ID,3>
+<OPASSIGN, >
+<ID,0>
+<SEPSCOM, >
+<ID,1>
+<SEPLPAR, >
+<ID,3>
+<SEPRPAR, >
+<SEPSCOM, >
+<EOF, >

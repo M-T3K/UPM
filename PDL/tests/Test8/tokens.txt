@@ -1,0 +1,64 @@
+<DECLVAR, >
+<TYPEINT, >
+<ID,0>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEINT, >
+<ID,1>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEINT, >
+<ID,2>
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"Introduce el primer operando">
+<SEPRPAR, >
+<SEPSCOM, >
+<IOIN, >
+<SEPLPAR, >
+<ID,0>
+<SEPRPAR, >
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"Introduce el segundo operando">
+<SEPRPAR, >
+<SEPSCOM, >
+<IOIN, >
+<SEPLPAR, >
+<ID,1>
+<SEPRPAR, >
+<SEPSCOM, >
+<DECLFUNC, >
+<TYPEINT, >
+<ID,3>
+<SEPLPAR, >
+<TYPEINT, >
+<ID,0>
+<SEPCOM, >
+<TYPEINT, >
+<ID,1>
+<SEPRPAR, >
+<SEPLCURL, >
+<RET, >
+<ID,>
+<OPDIV, >
+<ID,>
+<SEPSCOM, >
+<SEPRCURL, >
+<ID,2>
+<OPASSIGN, >
+<ID,3>
+<SEPLPAR, >
+<ID,0>
+<SEPCOM, >
+<ID,1>
+<SEPRPAR, >
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<ID,2>
+<SEPRPAR, >
+<SEPSCOM, >
+<EOF, >

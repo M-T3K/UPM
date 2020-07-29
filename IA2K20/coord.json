@@ -1,0 +1,212 @@
+[
+    {
+        "Name": "Shinjuku-Verde",
+        "Lat": 35.689611,
+        "Lon": 139.6983826
+    },
+    {
+        "Name": "Shinjuku-Rojo",
+        "Lat": 35.689611,
+        "Lon": 139.6983826
+    },
+    {
+        "Name": "Shinjuku-Amarillo",
+        "Lat": 35.689611,
+        "Lon": 139.6983826
+    },
+    {
+        "Name": "Yoyogi-Verde",
+        "Lat": 35.6830373,
+        "Lon": 139.6998668
+    },
+    {
+        "Name": "Yoyogi-Amarillo",
+        "Lat": 35.6830373,
+        "Lon": 139.6998668
+    },
+    {
+        "Name": "Ochanomizu-Rojo",
+        "Lat": 35.6993897,
+        "Lon": 139.7630592
+    },
+    {
+        "Name": "Ochanomizu-Amarillo",
+        "Lat": 35.6993897,
+        "Lon": 139.7630592
+    },
+    {
+        "Name": "Akihabara-Verde",
+        "Lat": 35.6983873,
+        "Lon": 139.770883
+    },
+    {
+        "Name": "Akihabara-Amarillo",
+        "Lat": 35.6983873,
+        "Lon": 139.770883
+    },
+    {
+        "Name": "Tokyo-Verde",
+        "Lat": 35.6812405,
+        "Lon": 139.7649361
+    },
+    {
+        "Name": "Tokyo-Rojo",
+        "Lat": 35.6812405,
+        "Lon": 139.7649361
+    },
+    {
+        "Name": "Harajuku",
+        "Lat": 35.6678408,
+        "Lon": 139.6978206
+    },
+    {
+        "Name": "Shibuya",
+        "Lat": 35.6580382,
+        "Lon": 139.6994471
+    },
+    {
+        "Name": "Ebisu",
+        "Lat": 35.6467182,
+        "Lon": 139.707889
+    },
+    {
+        "Name": "Meguro",
+        "Lat": 35.6337858,
+        "Lon": 139.7124554
+    },
+    {
+        "Name": "Gotanda",
+        "Lat": 35.6537623,
+        "Lon": 139.7103441
+    },
+    {
+        "Name": "Osaki",
+        "Lat": 35.6198556,
+        "Lon": 139.7260005
+    },
+    {
+        "Name": "Shinagawa",
+        "Lat": 35.6284756,
+        "Lon": 139.736571
+    },
+    {
+        "Name": "Tamachi",
+        "Lat": 35.6457404,
+        "Lon": 139.7453737
+    },
+    {
+        "Name": "Hamamatsucho",
+        "Lat": 35.6553852,
+        "Lon": 139.7549402
+    },
+    {
+        "Name": "Shimbashi",
+        "Lat": 35.6663833,
+        "Lon": 139.7561511
+    },
+    {
+        "Name": "Yurakucho",
+        "Lat": 35.674923,
+        "Lon": 139.7606312
+    },
+    {
+        "Name": "Kanda",
+        "Lat": 35.6918259,
+        "Lon": 139.7687431
+    },
+    {
+        "Name": "Okachimachi",
+        "Lat": 35.7075228,
+        "Lon": 139.7726677
+    },
+    {
+        "Name": "Ueno",
+        "Lat": 35.7141715,
+        "Lon": 139.7752204
+    },
+    {
+        "Name": "Uguisudani",
+        "Lat": 35.7214616,
+        "Lon": 139.7758246
+    },
+    {
+        "Name": "Nippori",
+        "Lat": 35.7281621,
+        "Lon": 139.7684527
+    },
+    {
+        "Name": "Shinanomachi",
+        "Lat": 35.6800645,
+        "Lon": 139.7181312
+    },
+    {
+        "Name": "Nishi-Nippori",
+        "Lat": 35.73201,
+        "Lon": 139.7646969
+    },
+    {
+        "Name": "Tabata",
+        "Lat": 35.7381624,
+        "Lon": 139.7586267
+    },
+    {
+        "Name": "Komagome",
+        "Lat": 35.7365708,
+        "Lon": 139.7448211
+    },
+    {
+        "Name": "Sugamo",
+        "Lat": 35.7334235,
+        "Lon": 139.7370961
+    },
+    {
+        "Name": "Otsuka",
+        "Lat": 35.7318352,
+        "Lon": 139.7259225
+    },
+    {
+        "Name": "Ikebukuro",
+        "Lat": 35.7295071,
+        "Lon": 139.7087114
+    },
+    {
+        "Name": "Mejiro",
+        "Lat": 35.7211757,
+        "Lon": 139.7043716
+    },
+    {
+        "Name": "Takadanobaba",
+        "Lat": 35.7125697,
+        "Lon": 139.7016728
+    },
+    {
+        "Name": "Shin-Okubo",
+        "Lat": 35.7018427,
+        "Lon": 139.6988632
+    },
+    {
+        "Name": "Sendagaya",
+        "Lat": 35.6811999,
+        "Lon": 139.7090921
+    },
+    {
+        "Name": "Yotsuya",
+        "Lat": 35.6861568,
+        "Lon": 139.7280296
+    },
+    {
+        "Name": "Ichigaya",
+        "Lat": 35.6910164,
+        "Lon": 139.7333787
+    },
+    {
+        "Name": "Iidabashi",
+        "Lat": 35.702088,
+        "Lon": 139.7428345
+    },
+    {
+        "Name": "Suidobashi",
+        "Lat": 35.7020527,
+        "Lon": 139.7513129
+    }                          
+]

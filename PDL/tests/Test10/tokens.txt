@@ -1,0 +1,47 @@
+<DECLVAR, >
+<TYPEINT, >
+<ID,0>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEBOOL, >
+<ID,1>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,2>
+<SEPSCOM, >
+<DECLFUNC, >
+<TYPESTR, >
+<ID,3>
+<SEPLPAR, >
+<TYPEINT, >
+<ID,0>
+<SEPRPAR, >
+<SEPLCURL, >
+<RET, >
+<SEPSTR,"adios">
+<SEPSCOM, >
+<SEPRCURL, >
+<DECLFUNC, >
+<TYPEINT, >
+<ID,4>
+<SEPLPAR, >
+<TYPEBOOL, >
+<ID,0>
+<SEPRPAR, >
+<SEPLCURL, >
+<RET, >
+<VALINT,2>
+<SEPSCOM, >
+<SEPRCURL, >
+<ID,3>
+<SEPLPAR, >
+<ID,0>
+<SEPRPAR, >
+<SEPSCOM, >
+<ID,4>
+<SEPLPAR, >
+<ID,1>
+<SEPRPAR, >
+<SEPSCOM, >
+<EOF, >

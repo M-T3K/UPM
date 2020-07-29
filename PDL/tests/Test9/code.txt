@@ -1,0 +1,52 @@
+var string texto;
+var string texto;
+var int numero;
+
+function imprime (string msg)
+{
+	var string pepe;
+	print ("Mensage introducido:");
+	print (msg);
+}
+
+var string nada;
+
+function int pideTexto (int pitos, boolean flautas)
+{
+	var int alfonso;
+	alfonso = alfonso / 4 / 6 ;
+	var string alex;
+	alex = "soy alex";
+	
+	print ("Introduce un texto");
+	input (texto);
+
+	nada = "eres nada";
+
+	return numero;
+}
+
+var boolean hola;
+
+pideTexto(numero, hola);
+var string textoAux;
+textoAux = texto;
+imprime (textoAux);
+
+var int mark;
+
+return;
+
+input(texto);
+var boolean patata;
+if ( mark || numero < 3 ) {
+	print("adios");
+}
+
+numero /= 385 / mark;
+
+var boolean kevin;
+
+nada = "kevin y mark";
+
+/*menudo comentario*/

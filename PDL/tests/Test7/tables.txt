@@ -1,0 +1,23 @@
+CONTENIDO DE LA TABLA #1: 
+----------------
+* LEXEMA: 'a'
+* TIPO: 'TYPEINT'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'b'
+* TIPO: 'TYPEINT'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'c'
+* TIPO: 'TYPEBOOL'
+* POS: '3'
+* DESPLZ: '2'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------

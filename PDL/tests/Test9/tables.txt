@@ -1,0 +1,118 @@
+CONTENIDO DE LA TABLA #1: 
+----------------
+* LEXEMA: 'texto'
+* TIPO: 'TYPESTR'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'numero'
+* TIPO: 'TYPEINT'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'imprime'
+* TIPO: ''
+* POS: '3'
+* DESPLZ: '2'
+* NUMPARAMS: '1'
+* PARAMTYPES: '[TYPESTR]'
+-------------------------
+* LEXEMA: 'nada'
+* TIPO: 'TYPESTR'
+* POS: '4'
+* DESPLZ: '3'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'pideTexto'
+* TIPO: 'TYPEINT'
+* POS: '5'
+* DESPLZ: '4'
+* NUMPARAMS: '2'
+* PARAMTYPES: '[TYPEINT TYPEBOOL]'
+-------------------------
+* LEXEMA: 'hola'
+* TIPO: 'TYPEBOOL'
+* POS: '6'
+* DESPLZ: '5'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'textoAux'
+* TIPO: 'TYPESTR'
+* POS: '7'
+* DESPLZ: '6'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'mark'
+* TIPO: 'TYPEINT'
+* POS: '8'
+* DESPLZ: '7'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'patata'
+* TIPO: 'TYPEBOOL'
+* POS: '9'
+* DESPLZ: '8'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'kevin'
+* TIPO: 'TYPEBOOL'
+* POS: '10'
+* DESPLZ: '9'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+CONTENIDO DE LA TABLA #2: 
+----------------
+* LEXEMA: 'msg'
+* TIPO: 'TYPESTR'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'pepe'
+* TIPO: 'TYPESTR'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+CONTENIDO DE LA TABLA #3: 
+----------------
+* LEXEMA: 'pitos'
+* TIPO: 'TYPEINT'
+* POS: '1'
+* DESPLZ: '0'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'flautas'
+* TIPO: 'TYPEBOOL'
+* POS: '2'
+* DESPLZ: '1'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'alfonso'
+* TIPO: 'TYPEINT'
+* POS: '3'
+* DESPLZ: '2'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------
+* LEXEMA: 'alex'
+* TIPO: 'TYPESTR'
+* POS: '4'
+* DESPLZ: '3'
+* NUMPARAMS: '0'
+* PARAMTYPES: '[]'
+-------------------------

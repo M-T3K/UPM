@@ -1,0 +1,156 @@
+<DECLVAR, >
+<TYPESTR, >
+<ID,0>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,0>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEINT, >
+<ID,1>
+<SEPSCOM, >
+<DECLFUNC, >
+<ID,2>
+<SEPLPAR, >
+<TYPESTR, >
+<ID,0>
+<SEPRPAR, >
+<SEPLCURL, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,>
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"Mensage introducido:">
+<SEPRPAR, >
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<ID,>
+<SEPRPAR, >
+<SEPSCOM, >
+<SEPRCURL, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,3>
+<SEPSCOM, >
+<DECLFUNC, >
+<TYPEINT, >
+<ID,4>
+<SEPLPAR, >
+<TYPEINT, >
+<ID,0>
+<SEPCOM, >
+<TYPEBOOL, >
+<ID,1>
+<SEPRPAR, >
+<SEPLCURL, >
+<DECLVAR, >
+<TYPEINT, >
+<ID,>
+<SEPSCOM, >
+<ID,>
+<OPASSIGN, >
+<ID,>
+<OPDIV, >
+<VALINT,4>
+<OPDIV, >
+<VALINT,6>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,>
+<SEPSCOM, >
+<ID,>
+<OPASSIGN, >
+<SEPSTR,"soy alex">
+<SEPSCOM, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"Introduce un texto">
+<SEPRPAR, >
+<SEPSCOM, >
+<IOIN, >
+<SEPLPAR, >
+<ID,>
+<SEPRPAR, >
+<SEPSCOM, >
+<ID,>
+<OPASSIGN, >
+<SEPSTR,"eres nada">
+<SEPSCOM, >
+<RET, >
+<ID,>
+<SEPSCOM, >
+<SEPRCURL, >
+<DECLVAR, >
+<TYPEBOOL, >
+<ID,5>
+<SEPSCOM, >
+<ID,4>
+<SEPLPAR, >
+<ID,1>
+<SEPCOM, >
+<ID,5>
+<SEPRPAR, >
+<SEPSCOM, >
+<DECLVAR, >
+<TYPESTR, >
+<ID,6>
+<SEPSCOM, >
+<ID,6>
+<OPASSIGN, >
+<ID,0>
+<SEPSCOM, >
+<ID,2>
+<SEPLPAR, >
+<ID,6>
+<SEPRPAR, >
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEINT, >
+<ID,7>
+<SEPSCOM, >
+<RET, >
+<SEPSCOM, >
+<IOIN, >
+<SEPLPAR, >
+<ID,0>
+<SEPRPAR, >
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEBOOL, >
+<ID,8>
+<SEPSCOM, >
+<CONDIF, >
+<SEPLPAR, >
+<ID,7>
+<OPOR, >
+<ID,1>
+<OPLT, >
+<VALINT,3>
+<SEPRPAR, >
+<SEPLCURL, >
+<IOOUT, >
+<SEPLPAR, >
+<SEPSTR,"adios">
+<SEPRPAR, >
+<SEPSCOM, >
+<SEPRCURL, >
+<ID,1>
+<OPDIVASSIGN, >
+<VALINT,385>
+<OPDIV, >
+<ID,7>
+<SEPSCOM, >
+<DECLVAR, >
+<TYPEBOOL, >
+<ID,9>
+<SEPSCOM, >
+<ID,3>
+<OPASSIGN, >
+<SEPSTR,"kevin y mark">
+<SEPSCOM, >
+<EOF, >
