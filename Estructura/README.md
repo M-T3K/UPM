@@ -1,12 +1,11 @@
 # La Vida es Dura
 ## Pero mas dura es Estructura
-Trabaho de Ass-Embly para el regocijo de los homos del Datsi on SiDaH
+Sike es broma, estructura esta regaladisima.
 
 ## Tabla de Contenidos
 - [La Vida es Dura](#la-vida-es-dura)
   - [Pero mas dura es Estructura](#pero-mas-dura-es-estructura)
   - [Tabla de Contenidos](#tabla-de-contenidos)
-  - [Progreso](#progreso)
   - [Links](#links)
   - [M88K-HK](#m88k-hk)
     - [Registros](#registros)
@@ -15,34 +14,15 @@ Trabaho de Ass-Embly para el regocijo de los homos del Datsi on SiDaH
   - [Uso de los Archivos .bat](#uso-de-los-archivos-bat)
   - [Uso de los Archivos .sh](#uso-de-los-archivos-sh)
 
-## Progreso
-
-![Entregas](/Info/Entregas.png)
-
-- [x] nFiltrados (0f/10)
-- [x] Comp (0f/10)
-- [x] ActualizaFiltro (0f/10)
-- [x] SubMatriz (0f/10)
-- [x] ValorPixel (0f/10)
-- [x] FilPixel (0f/10)
-- [x] Filtro (0f/10)
-- [x] FiltRec  (0f/10)
-
 ## Links 
 
 * [Pagina del Proyecto](https://www.datsi.fi.upm.es/docencia/Estructura_09/Proyecto_Ensamblador/)
-
-* [Enunciado](https://www.datsi.fi.upm.es/docencia/Estructura_09/Proyecto_Ensamblador/privado/enunciado_f19.pdf)
-
-* [Casos de Prueba](https://www.datsi.fi.upm.es/docencia/Estructura_09/Proyecto_Ensamblador/privado/casos_f19.pdf)
-
-* [Presentacion](https://www.datsi.fi.upm.es/docencia/Estructura_09/Proyecto_Ensamblador/privado/filtror_f19_exp.pdf)
 
 * [F.A.Q](http://www.datsi.fi.upm.es/docencia/Estructura_09/Proyecto_Ensamblador/aclaraciones.html)
 
 ## M88K-HK
 
-M88K-HK (H-Kevin) es una serie de directrices para hacer el codigo escrito en Motorola-88000 mas legible. 
+M88K-HK es una serie de directrices para hacer el codigo escrito en Motorola-88000 mas legible. 
 
 ### Registros
 
