@@ -2,6 +2,18 @@
 ## (Escuela Técnica Superior de Ingenieros Informáticos)
 Repositorio git con Código relacionado con distintas clases de la UPM:ETSIINF. Los ejercicios y prácticas pueden haber cambiado de un año para otro, y no se asegura que las soluciones aquí proporcionadas sean las más aceptables.
 
+# Contenidos
+
+- [UPM ETSIINF](#upm-etsiinf)
+  - [(Escuela Técnica Superior de Ingenieros Informáticos)](#escuela-técnica-superior-de-ingenieros-informáticos)
+- [Contenidos](#contenidos)
+  - [Advertencia](#advertencia)
+- [Guia de Contribución](#guia-de-contribución)
+- [Asignaturas](#asignaturas)
+  - [Clases](#clases)
+- [Anticopia](#anticopia)
+- [Contribuyentes](#contribuyentes)
+    
 ## Advertencia
 
 Este repositorio representa una fuente de conocimiento de libre acceso para los estudiantes del Grado en Ingenieria Informática de la ETSIINF UPM. **Ninguna de las personas que contribuye a este repositorio con código se hace responsable del mal uso del mismo. Está puesto como ayuda o guía y no para copiarlo. Pueden haber medidas implementadas para evitar el Copy & Paste.** 
@@ -13,17 +25,19 @@ Dicho esto, no sería la primera vez que alguien intenta bloquear el acceso a ma
 
 Si hubiera cualquier material que en su opinión no cae bajo estos criterios, cree un [issue](https://github.com/M-T3K/UPM/issues) y será valorada. 
 
-# Contenidos
+# Guia de Contribución
 
-- [UPM ETSIINF](#upm-etsiinf)
-  - [(Escuela Técnica Superior de Ingenieros Informáticos)](#escuela-técnica-superior-de-ingenieros-informáticos)
-  - [Advertencia](#advertencia)
-- [Contenidos](#contenidos)
-- [Asignaturas](#asignaturas)
-  - [Clases](#clases)
-- [Anticopia](#anticopia)
-- [Contributors](#contributors)
-    
+Si os interesa contribuir, hacedlo! Se agradece cualquier ayuda. Sin embargo, hay algunas medidas que debéis considerar. Tened en cuenta lo expuesto en el punto anterior, y entended que, al igual que nosotros tenemos derechos intelectuales sobre nuestros trabajos, los profesores también lo tienen, y por tanto no podemos publicar todo el material que nos apetezca. Por esto, para subir cualquier solución debéis:
+
+- [ ] Borrar todos los enunciados de las prácticas.
+- [ ] Borrar todos los esqueletos de las prácticas.
+- [ ] En general, borrar cualquier tipo de material que venga incluido con la práctica y que no sea vuestro. Esto incluiría, por ejemplo, ficheros adicionales que los profesores puedan proporcionar.
+- [ ] Esperar, como mínimo, a que cierren las actas de la convocatoria extraordinaria del mismo curso en el que presentáis dichas prácticas (para evitar copias, ya que estas afectarían negativamente a todos los involucrados, ya sean pasivos o no).
+- [ ] Volver a comprobar que no se incumple ninguna de las anteriores.
+- [ ] Clonar el repositorio mediante `git clone https://github.com/M-T3K/UPM.git`
+- [ ] Realizar los cambios apropiados, actualizando la sección de [Asignaturas](#asignaturas) y de [Contribuyentes](#contribuyentes).
+- [ ] Realizar una [Pull Request](https://github.com/M-T3K/UPM/pulls)
+
 # Asignaturas
 
 En este repo se cubren las siguientes asignaturas:
@@ -80,7 +94,7 @@ El código es menos vulnerable a la copia manual.
 
 - **Pseudocódigo**: Algunos archivos de código pueden estar escritos en Pseudocódigo o incluso un lenguaje esotérico.
 
-# Contributors
+# Contribuyentes
 
 Sección con información acerca de las personas que contribuyen a este repo.
 
