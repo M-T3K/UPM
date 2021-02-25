@@ -65,6 +65,7 @@ En este repo se cubren las siguientes asignaturas:
 - Concurrencia
     - [@PRINCE_KIWII 18'-19'](https://github.com/M-T3K/UPM/tree/master/Concurrencia)
     - [@RESKOM326 18'-19'](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Segundo/Concurrencia)
+    - [@REALFRANSER 19'-20'](https://github.com/realfranser/UPM/tree/concu2k20/Concurrencia/Practicas/2k20)
 - Bases de Datos
     - [@PRINCE_KIWII 18'-19'](https://github.com/M-T3K/UPM/blob/master/Bases/Bases2k19/Kiw_AsociacionCervecera.java)
     - [@RESKOM326 18'-19'](https://github.com/M-T3K/UPM/blob/master/Bases/Bases2k19/Reskom_AsociacionCervecera.java)
@@ -134,3 +135,9 @@ Sección con información acerca de las personas que contribuyen a este repo.
         + Github: [Aquí](https://github.com/angiekroli)
         + E-Mail: _______
 
++ REALFRANSER:
+    + Contribuyente.
+    + Contacto:
+        + Telegram: _______
+        + Github: [Aquí](https://github.com/realfranser)
+        + E-Mail: serranoarresejavier@gmail.com
