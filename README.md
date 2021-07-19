@@ -52,7 +52,7 @@ En este repo se cubren las siguientes asignaturas:
     - [@PRINCE_KIWII](https://github.com/M-T3K/UPM/tree/master/Sistemas%20Digitales)
     - [@RESKOM326](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/SistemasDigitales/)
 - Algoritmos y Estructuras de Datos 18'-19'
-    - [@PRINCE_KIWII] (https://github.com/M-T3K/UPM/tree/master/AlgoritmosEstructurasDeDatos)
+    - [@PRINCE_KIWII](https://github.com/M-T3K/UPM/tree/master/AlgoritmosEstructurasDeDatos)
     - [@RESKOM326](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Segundo/AED/aed)
 - Programación para Sistemas 18'-19'
     - [@PRINCE_KIWII](https://github.com/M-T3K/UPM/tree/master/Programacion%20Para%20Sistemas)
