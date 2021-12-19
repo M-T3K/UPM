@@ -1,0 +1,5 @@
+; Primer Test
+
+addu r4, r0, 2 ;  r4 = 2
+mulu r4, r4, 7 ;  r4 = r4*2 = 7 * 2 = 14
+divs r5, r4, -2 ; r5 = r4 / -2 = 14 / -2 = -7

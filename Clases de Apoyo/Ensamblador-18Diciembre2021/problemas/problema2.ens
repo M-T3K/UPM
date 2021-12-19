@@ -1,0 +1,11 @@
+
+
+
+; Primera Parte: Queremos poner en r1, r2, y r3 los números 999, 1000, y 1001 respectivamente. 
+or r1, r0, 999
+or r2, r0, 0x3e8 ; Se puede hacer en hexadecimal tambien
+or r3, r0, 1001
+
+; Segunda Parte: queremos dejar r1 y r3 a 0 usando las instrucciones AND y XOR, respectivamente.
+and r1, r1, r0
+xor r3, r3, r3

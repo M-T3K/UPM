@@ -1,0 +1,168 @@
+; Como el problema 4 pero con subrutinas y las siguientes consideraciones extra:
+; Usar un Programa Principal (ppal) para preparar argumentos y ejecutar la subrutina invertir, que devolverá en r29 el primer caracter leído, con los siguientes argumentos:
+; Dirección del Buffer original de texto a invertir
+; Dirección del Buffer final de texto invertido.
+;  Dirección de la variable numchars.
+; Valor que debemos sumar al primer caracter leido antes de retornarlo.
+; El incremento de la variable numchars deberá usar una subrutina.
+
+
+; ZONA DE MACROS
+LEA:   MACRO(ra, eti)
+    or   ra, r0, low(eti)
+    or.u ra, ra, high(eti)
+ENDMACRO
+
+LOAD:   MACRO(ra, eti)
+    LEA(ra, eti)        ; rA <- &eti
+    ld ra, ra, 0        ; rA <- *rA
+ENDMACRO
+
+PUSH:   MACRO(ra)
+    subu r30, r30, 4        
+    st ra, r30, 0           
+ENDMACRO
+
+POP:    MACRO(ra)
+    ld ra, r30, 0
+    addu r30, r30, 4
+ENDMACRO
+
+cPILA:		MACRO()
+			PUSH(r1)
+			PUSH(r31)
+			or r31, r30, r30
+ENDMACRO
+
+dPILA:		MACRO()
+			or r30, r31, r31
+			POP(r31)
+			POP(r1)
+ENDMACRO
+
+; ZONA DE DATOS
+
+org 0 ; Direccion 0x0
+
+; Texto original sera la repeticion de la palabra "texto" 10 veces (50 chars)
+texto: data "textotextotextotextotextotextotextotextotextotexto"
+
+inverso: res 52 ; Debe estar orientado a palabra, por lo que necesita tener longitud de 52
+
+
+org 1000; Direccion 0x1000
+
+numchars:	data 0 ; Creamos la variable
+
+valsuma:    data 12
+
+org 1100; Aquí empieza el código
+
+PPAL:   ; Debemos inicializar la pila a un numero razonable
+        ; Esto es MUY IMPORTANTE, sino, tendremos errores
+        LEA(r30, 65000)
+        LEA(r20, texto) ; Cargamos los parametros
+        LEA(r21, inverso)
+        LEA(r22, numchars)
+        LOAD(r23, valsuma); El valor disponible en valsuma
+
+        ; Cargamos los parametros en pila
+        ; el orden de los push y pop debe ser inverso
+        PUSH(r20)
+        PUSH(r21)
+        PUSH(r22)
+        PUSH(r23)
+        bsr invertir
+        POP(r23)
+        POP(r22)
+        POP(r21)
+        POP(r20)
+
+        stop ; Fin de la ejecucion
+
+
+nChars:     cPILA()
+            ; La Pila actualmente es tal que asi:
+
+            ; 64FDC r31 (valor del registro r31, es decir, salvaguardado de la direccion de pila en "nChars")
+            ; 64FE0 r1 (valor del registro r1, es decir, salvagiardado de la direccion de retorno en "nChars")
+            ; 64FE4 &numchars (direccion de la variable numchars)
+            
+            ; 64FE8 r31 (valor del registro r31, es decir, salvaguardado de la direccion de pila en "invertir")
+            ; 64FEC r1 (valor del registro r1, es decir, salvagiardado de la direccion de retorno en "invertir")
+            ; 64FF0 valsuma (valor de la variable numchars)
+            ; 64FF4 &numchars (direccion de la variable numchars)
+            ; 64FF8 &inverso (direccion de la variable inverso)
+            ; 64FFC &texto (direccion de la variable texto)
+            ; 65000 FIN
+
+            ; Como se puede ver, se guarda de forma recursiva para evitar borrar informacion de la anterior.
+            ; De ahi la utilidad del marco de pila.
+            ; Vuelve a pasar lo mismo que antes, por lo que tenemos que cargar la informacion 8 bytes por encima
+            ; del puntero de pila
+
+            ; Prestad atencion a los registros que uso
+            ; en este caso uso el r22 porque se que asi
+            ; contendra la misma informacion tanto en esta 
+            ; subrutina como en "invertir". La realidad es
+            ; que este registro no esta salvaguardado, por
+            ; lo que podemos editar su valor, y esto tendra
+            ; repercusiones en el valor que tiene en la 
+            ; otra subrutina. Para evitar esto, se puede hacer 
+            ; PUSH y POP de TODOS los registros antes de llamar
+            ; a cualquier subrutina, pero esto es muy ineficiente.
+            ; Otra opcion es simplemente tener cuidado de que no 
+            ; haya solapamiento en los registros que usas. 
+            ld r22, r31, 8 ; &numchars
+            ld r23, r22, 0  ; Cargamos el valor de numchars
+            addu r23, r23, 1 ; Incrementamos en 1
+            st r23, r22, r0 ; Almacenamos el nuevo valor de numchars en la direccion correspondiente
+            dPILA()
+            jmp(r1)
+
+invertir:   cPILA()
+            or r4,r0,0x0; en r4 almacenaremos caracteres
+            or r5,r0,50; r5 será un contador
+
+            ; Actualmente la pila sera mas o menos asi:
+
+            ; 64FE8 r31 (valor del registro r31, es decir, salvaguardado de la direccion de pila)
+            ; 64FEC r1 (valor del registro r1, es decir, salvagiardado de la direccion de retorno)
+            ; 64FF0 valsuma (valor de la variable numchars)
+            ; 64FF4 &numchars (direccion de la variable numchars)
+            ; 64FF8 &inverso (direccion de la variable inverso)
+            ; 64FFC &texto (direccion de la variable texto)
+            ; 65000 FIN
+
+            ; Por lo que tenemos que cargar los parametros
+
+            ; Dado que el puntero de pila esta en la direccion 0x64FE8
+            ; y que el primer argumento que queremos esta en la direccion 0x64FF0
+            ; Nos vemos obligados a recuperar los parametros en una direccion de
+            ; memoria 8 bytes superior al puntero de pila actual (r31)
+
+            ld r23, r31, 0x8 ; valor de la suma
+            ld r22, r31, 0xC ; &numchars
+            ld r21, r31, 0x10 ; &inverso
+            ld r20, r31, 0x14 ; &texto
+            or r7, r21, r0 ; Uso un nuevo registro para no modificar la carga del parametro
+
+buctxt:     ld.bu r4, r3, r5; Cargamos en r4 el caracter en la direccion texto + r5 (contador)
+
+            st.b r4, r7, r0; Almacenamos el caracter en el buffer inverso
+        
+            PUSH(r22)
+                bsr nChars  ; Vamos a la subrutina nChars
+            POP(r22)
+
+            addu r7, r7, 1	; Incrementamos en 1 la direccion a la que apunta el buffer
+
+            ; Fin del Bucle
+            subu r5, r5, 1  ; Reducimos en 1 el contador
+            cmp r17, r5, 0	; Comprobamos si el contador ha llegado a 50
+                bb0 lt, r17, buctxt; Si no es menor que 0, volvemos al principio del bucle
+
+fin:    ld.bu r29, r20, 0   ; Aqui debemos cargar el primer caracter
+        addu r29, r29, r23  ; Realizamos la suma
+        dPILA()
+        jmp(r1) ; Volvemos a donde estaba la ejecucion anteriormente

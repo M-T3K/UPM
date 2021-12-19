@@ -1,0 +1,59 @@
+; Queremos sumar dos números y negar el último bit del resultado.
+
+; Elegimos 2 numeros
+eti1: or r1, r0, 7
+      or r2, r0, 8
+
+; Los sumamos y guardamos en r2
+
+addu r2, r1, r2
+
+; Ahora queremos realizar una inversion
+; Para ello queremos comprobar el ultimo bit
+; El problema es que cmp no permite comprobar
+; bits especificos, por lo que debemos extraer
+; este ultimo bit.
+; Podemos hacer esto de varias formas. En mi opinion
+; la mas sencilla es mediante aplicacion de mascara con AND
+
+; Supongamos que r2 tiene el numero 111111111111111111111111
+; lo estariamos comparando con el   000000000000000000000001
+; Solo el ultimo bit es comun: en ambos, el ultimo bit es 1
+; y por lo tanto, en r3 se almacenaria 1
+; Imaginemos que r2 tiene el numero 000000000000000000000000
+; como lo estamos comparando con el 000000000000000000000001
+; y no son bits comunes, obtenemos  000000000000000000000000
+
+; Como se puede observar, r3 = 1 cuando el ultimo bit de r2 es 1
+; y 0 si el ultimo bit de r2 es 0.
+
+; Dicho de otro modo, ahora mismo r3 almacenará siempre el ultimo bit de r2
+and r3, r2, 1
+
+; Esto tambien se puede hacer con la instruccion mask
+; la instruccion mask no es mas que un AND
+; y todo lo que hagamos con mask se puede hacer con AND
+; pero no todo lo que se puede hacer con AND puede hacerse
+; con un mask
+mask r3, r2, 1 
+
+; Ahora debemos realizar la comparacion
+
+cmp r4, r3, r0 ; Comprobamos si r3 == 0
+; el resultado de la comparacion se almacena en r4
+bb1 eq, r4, bit_cero
+
+; Solo llegamos a esta zona si el ultimo bit
+; de r2 es igual a 1
+bit_uno: clr r5, r2, 1<0>
+
+      br zona_fin
+; Solo llegamos a esta zona si el ultimo bit
+; de r2 es igual a 1
+bit_cero: set r5, r2, 1<0>
+
+; Tenemos que usar 1<0> porque
+; 1 especifica la cantidad de bits con los que operar
+; y el 0 especifica la posicion del bit inicial
+; Terminamos sumando 7
+zona_fin: addu r5, r5, 7

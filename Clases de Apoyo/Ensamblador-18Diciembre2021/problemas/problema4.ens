@@ -1,0 +1,61 @@
+; Se proporciona un texto de una longitude máxima de 50 caracteres en la dirección 0.
+; Se pretende invertir este texto, es decir, darle la Vuelta, e insertarlo en una sección reservada
+; inmediatamente después del texto original. 
+; Además, en la dirección 1000 existirá una variable global numchars. Por cada letra del texto original,
+; se deberá sumar uno a esta variable global.
+; Por ultimo, el primer caracter del texto debera ser devuelto en r29, pero Está prohibido almacenarlo 
+; simplemente en r29 al principio de la ejecucion.
+
+; Uso la macro LEA
+LEA:   MACRO(ra, eti)
+    or   ra, r0, low(eti)
+    or.u ra, ra, high(eti)
+ENDMACRO
+
+org 0 ; Direccion 0x0
+
+; Texto original sera la repeticion de la palabra "texto" 10 veces (50 chars)
+texto: data "textotextotextotextotextotextotextotextotextotexto"
+
+inverso: res 52 ; Debe estar orientado a palabra, por lo que necesita tener longitud de 52
+
+
+org 1000; Direccion 0x1000
+
+numchars:	data 0 ; Creamos la variable
+
+org 1100; Aquí empieza el código
+; Si quisiesemos optimizar el espacio que ocupa
+; empezariamos en el 1004 ¿por qué?
+; Porque numchars es una palabra, es decir, ocupa 4 bytes.
+; Realmente, tampoco necesitamos usar org en este caso
+; automaticamente acabariamos detras en memoria de numchars.
+
+start:  or r4,r0,0x0; en r4 almacenaremos caracteres
+        or r5,r0,50; r5 será un contador
+        LEA(r3, texto); la direccion inicial es 0, pero la cargamos a partir de la etiqueta "texto"
+                        ; por claridad
+        LEA(r8, numchars)
+        LEA(r7, inverso); la direccion inicial del buffer en el que debemos meter el texto invertido
+buctxt: ;mulu r6, r5, 1  ; Esta instruccion es tonta, porque cada char ocupa 1 byte
+                        ; y ya sabemos la direccion inicial del texto.
+                        ; Sin embargo, si estuvieramos cargando palabras enteras, 
+                        ; su utilidad seria evidente: estamos calculando la direccion
+                        ; del siguiente elemento con la siguiente formula:
+                        ; direccion_nuevo_elem = direccion_inicial + contador * tamaño_de_cada_elem
+        addu r4, r3, r5 ; Direccion del nuevo elemento
+        ld.bu r4, r3, r5; Cargamos en r4 el caracter en la direccion r3 + r5
+                        ; es decir, el caracter actual.
+
+        st.b r4, r7, r0; Almacenamos el caracter en el buffer inverso
+        
+        ld r9,r8,r0 ; Cargamos el valor de la variable global numchars
+        addu r9,r9, 1 ; Incrementamos en 1 el valor obtenido
+        st r9, r8, r0	;Almacenamos el nuevo valor de la variable
+        addu r7, r7, 1	; Incrementamos en 1 la direccion a la que apunta el buffer
+
+        ; Fin del Bucle
+        subu r5, r5, 1  ; Añadimos 1 al contador
+        cmp r17, r5, 0	; Comprobamos si el contador ha llegado a 50
+        bb0 lt, r17, buctxt; Si no es menor que 0, volvemos al principio del bucle
+fin:    ld.bu r29, r0, 0   ; Aqui debemos cargar el primer caracter

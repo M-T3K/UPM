@@ -10,7 +10,8 @@ Repositorio git con Código relacionado con distintas clases de la UPM:ETSIINF. 
   - [Advertencia](#advertencia)
 - [Guia de Contribución](#guia-de-contribución)
 - [Asignaturas](#asignaturas)
-  - [Clases](#clases)
+  - [Grupos](#grupos)
+  - [Clases de Apoyo](#clases-de-apoyo)
 - [Anticopia](#anticopia)
 - [Contribuyentes](#contribuyentes)
     
@@ -47,6 +48,7 @@ En este repo se cubren las siguientes asignaturas:
 - Programación II 17'-18
     - [@RACCAPS & @PRINCE_KIWII](https://github.com/RACAPPS/Programacion2UPM/tree/84eb1aebfcda4821ded464205df6900015e0c888)
     - [@RESKOM326](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/ProgramacionII)
+    - [Clase de Apoyo a Orientación a Objetos](https://github.com/M-T3K/UPM/tree/master/Clases%20de%20Apoyo/Objetos%20-%2024Abril2018)
 - [Probabilidad y Estadística I 17'-18](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/ProbabilidadI/)
 - Sistemas Digitales 17'-18'
     - [@PRINCE_KIWII](https://github.com/M-T3K/UPM/tree/master/Sistemas%20Digitales)
@@ -61,6 +63,7 @@ En este repo se cubren las siguientes asignaturas:
     - [@PRINCE_KIWII/@Hacheeee 18'-19'](https://github.com/M-T3K/UPM/tree/master/Estructura/Kiw2k19)
     - [@RESKOM326/@angiekroli 18'-19'](https://github.com/M-T3K/UPM/tree/master/Estructura/Reskom2k19)
     - [@ALEJAX0 19'/20'](https://github.com/M-T3K/UPM/tree/master/Estructura/Alejax2k20)
+    - [Clase de Apoyo de Ensamblador](https://github.com/M-T3K/UPM/tree/master/Clases%20de%20Apoyo/Ensamblador-18Diciembre2021/)
 - [Algorítmica Numérica I 18'-19'](https://github.com/M-T3K/UPM/tree/master/Algoritmica%20Numerica%20I/)
 - Concurrencia
     - [@PRINCE_KIWII 18'-19'](https://github.com/M-T3K/UPM/tree/master/Concurrencia)
@@ -76,8 +79,12 @@ En este repo se cubren las siguientes asignaturas:
 - [Ingeniería del Software I 19'-20'](https://github.com/M-T3K/UPM/tree/master/IS1)
 - [Sistemas Distribuidos](https://github.com/M-T3K/UPM/tree/master/SistemasDistribuidos/)
 
-## Clases
+## Grupos
 Habrá ocasiones que haya código de más de un Grupo de clase o año. Esto dependerá de quien Contribuya al Repositorio o de quiénes me hayan dado permiso para incluir su código en el mismo.
+
+## Clases de Apoyo
+
+Algunas veces se han solicitado clases (siempre gratuitas) de apoyo y las he proporcionado. El material para dichas clases se encuentra en el siguiente [directorio](https://github.com/M-T3K/UPM/tree/master/Clases%20de%20Apoyo).
 
 # Anticopia
 
