@@ -80,6 +80,7 @@ En este repo se cubren las siguientes asignaturas:
 - [Inteligencia Artificial](https://github.com/M-T3K/UPM/tree/master/IA)
     - [@PRINCE_KIWII  19'-20'](https://github.com/M-T3K/UPM/tree/master/IA2K20)
     - [@PRINCE_KIWII  20'-21'](https://github.com/M-T3K/UPM/tree/master/IA2K21)
+    - [@RACCAPS 19'-20'](https://github.com/rubenaguadoc/practica-ia)
 - [Ingeniería del Software I 19'-20'](https://github.com/M-T3K/UPM/tree/master/IS1)
 - [Sistemas Distribuidos](https://github.com/M-T3K/UPM/tree/master/SistemasDistribuidos/)
 - [Administracion de Sistemas Informaticos](https://github.com/M-T3K/UPM/tree/master/ASI/)
