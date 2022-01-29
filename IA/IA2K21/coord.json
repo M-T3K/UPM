@@ -1,0 +1,292 @@
+[
+	{
+		"Name": "Piraeus",
+		"Lat": 37.948116,
+		"Lon": 23.643272
+	},
+	{
+		"Name": "Faliro",
+		"Lat": 37.944988,
+		"Lon": 23.665225
+	},
+	{
+		"Name": "Moschato",
+		"Lat": 37.955060,
+		"Lon": 23.679700
+	},
+	{
+		"Name": "Kallithea",
+		"Lat": 37.960405,
+		"Lon": 23.697332
+	},
+	{
+		"Name": "Tavros",
+		"Lat": 37.962466,
+		"Lon": 23.703392
+	},
+	{
+		"Name": "Petralona",
+		"Lat": 37.968626,
+		"Lon": 23.709244
+	},
+	{
+		"Name": "Thissio",
+		"Lat": 37.976709,
+		"Lon": 23.720706
+	},
+	{
+		"Name": "Monastiraki-Verde",
+		"Lat": 37.976085,
+		"Lon": 23.725626
+	},
+	{
+		"Name": "Omonia-Verde",
+		"Lat": 37.984183,
+		"Lon": 23.728695
+	},
+	{
+		"Name": "Victoria",
+		"Lat": 37.993077,
+		"Lon": 23.730286
+	},
+	{
+		"Name": "Attiki-Verde",
+		"Lat": 37.999296,
+		"Lon": 23.722099
+	},
+	{
+		"Name": "Aghios Nikolaos",
+		"Lat": 38.006921,
+		"Lon": 23.727711
+	},
+	{
+		"Name": "Kato Patissia",
+		"Lat": 38.011577,
+		"Lon": 23.728792
+	},
+	{
+		"Name": "Aghios Eleftherios",
+		"Lat": 38.020114,
+		"Lon": 23.731858
+	},
+	{
+		"Name": "Ano Patissia",
+		"Lat": 38.023797,
+		"Lon": 23.735964
+	},
+	{
+		"Name": "Perissos",
+		"Lat": 38.032853,
+		"Lon": 23.744629
+	},
+	{
+		"Name": "Pefkakia",
+		"Lat": 38.037146,
+		"Lon": 23.750170
+	},
+	{
+		"Name": "Nea Ionia",
+		"Lat": 38.041614,
+		"Lon": 23.755197
+	},
+	{
+		"Name": "Iraklio",
+		"Lat": 38.046253,
+		"Lon": 23.766074
+	},
+	{
+		"Name": "Irini",
+		"Lat": 38.043732,
+		"Lon": 23.782722
+	},
+	{
+		"Name": "Neratziotissa",
+		"Lat": 38.044805,
+		"Lon": 23.792862
+	},
+	{
+		"Name": "Maroussi",
+		"Lat": 38.056182,
+		"Lon": 23.804979
+	},
+	{
+		"Name": "KAT",
+		"Lat": 38.065921,
+		"Lon": 23.804028
+	},
+	{
+		"Name": "Kifissia",
+		"Lat": 38.073682,
+		"Lon": 23.808310
+	},
+	{
+		"Name": "Aghios Dimitrios · Alexandros Panagoulis",
+		"Lat": 37.940484,
+		"Lon": 23.740713
+	},
+	{
+		"Name": "Dafni",
+		"Lat": 37.949202,
+		"Lon": 23.737224
+	},
+	{
+		"Name": "Aghios Ioannis",
+		"Lat": 37.956629,
+		"Lon": 23.734684
+	},
+	{
+		"Name": "Neos Kosmos",
+		"Lat": 37.957597,
+		"Lon": 23.728466
+	},
+	{
+		"Name": "Sygrou-Fix",
+		"Lat": 37.964294,
+		"Lon": 23.726567
+	},
+	{
+		"Name": "Akropoli",
+		"Lat": 37.968733,
+		"Lon": 23.729601
+	},
+	{
+		"Name": "Syntagma-Rojo",
+		"Lat": 37.975085,
+		"Lon": 23.735685
+	},
+	{
+		"Name": "Panepistimio",
+		"Lat": 37.980387,
+		"Lon": 23.733051
+	},
+	{
+		"Name": "Omonia-Rojo",
+		"Lat": 37.984183,
+		"Lon": 23.728695
+	},
+	{
+		"Name": "Metaxourghio",
+		"Lat": 37.986274,
+		"Lon": 23.721142
+	},
+	{
+		"Name": "Larissa Station",
+		"Lat": 37.991996,
+		"Lon": 23.721102
+	},
+	{
+		"Name": "Attiki-Rojo",
+		"Lat": 37.999296,
+		"Lon": 23.722099
+	},
+	{
+		"Name": "Sepolia",
+		"Lat": 38.002647,
+		"Lon": 23.713538
+	},
+	{
+		"Name": "Aghios Antonios",
+		"Lat": 38.006662,
+		"Lon": 23.699482
+	},
+	{
+		"Name": "Egaleo",
+		"Lat": 37.991956,
+		"Lon": 23.681829
+	},
+	{
+		"Name": "Eleonas",
+		"Lat": 37.987894,
+		"Lon": 23.694177
+	},
+	{
+		"Name": "Kerameikos",
+		"Lat": 37.978584,
+		"Lon": 23.711462
+	},
+	{
+		"Name": "Monastiraki-Azul",
+		"Lat": 37.976085,
+		"Lon": 23.725626
+	},
+	{
+		"Name": "Syntagma-Azul",
+		"Lat": 37.975085,
+		"Lon": 23.735685
+	},
+	{
+		"Name": "Evangelismos",
+		"Lat": 37.976018,
+		"Lon": 23.746627
+	},
+	{
+		"Name": "Megaro Moussikis",
+		"Lat": 37.979287,
+		"Lon": 23.752912
+	},
+	{
+		"Name": "Ambelokipi",
+		"Lat": 37.987326,
+		"Lon": 23.757029
+	},
+	{
+		"Name": "Panormou",
+		"Lat": 37.993161,
+		"Lon": 23.763419
+	},
+	{
+		"Name": "Katehaki",
+		"Lat": 37.993168,
+		"Lon": 23.776152
+	},
+	{
+		"Name": "Ethniki Amyna",
+		"Lat": 38.000055,
+		"Lon": 23.785752
+	},
+	{
+		"Name": "Holargos",
+		"Lat": 38.004520,
+		"Lon": 23.794724
+	},
+	{
+		"Name": "Nomismatokopio",
+		"Lat": 38.009274,
+		"Lon": 23.805667
+	},
+	{
+		"Name": "Aghia Paraskevi",
+		"Lat": 38.017193,
+		"Lon": 23.812321
+	},
+	{
+		"Name": "Halandri",
+		"Lat": 38.021514,
+		"Lon": 23.821225
+	},
+	{
+		"Name": "Doukissis Plakentias",
+		"Lat": 38.024592,
+		"Lon": 23.833041
+	},
+	{
+		"Name": "Pallini",
+		"Lat": 38.005837,
+		"Lon": 23.869586
+	},
+	{
+		"Name": "Paiania-Kantza",
+		"Lat": 37.984218,
+		"Lon": 23.870007
+	},
+	{
+		"Name": "Koropi",
+		"Lat": 37.913013,
+		"Lon": 23.895810
+	},
+	{
+		"Name": "Airport",
+		"Lat": 37.936920,
+		"Lon": 23.944799
+	}
+]

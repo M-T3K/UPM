@@ -1,0 +1,367 @@
+{
+    "lines": [
+      {
+        "color": "Verde",
+        "nodes": [
+            {
+                "name": "Kifissia",
+                "x": 677,
+                "y": 114,
+                "rad": 7
+            },
+            {
+                "name": "KAT",
+                "x": 636,
+                "y": 154,
+                "rad": 7
+            },
+            {
+                "name": "Maroussi",
+                "x": 595,
+                "y": 191,
+                "rad": 7
+            },
+            {
+                "name": "Neratziotissa",
+                "x": 547,
+                "y": 234,
+                "rad": 7
+            },
+            {
+                "name": "Irini",
+                "x": 511,
+                "y": 237,
+                "rad": 7
+            },
+            {
+                "name": "Iraklio",
+                "x": 419,
+                "y": 246,
+                "rad": 7
+            },
+            {
+                "name": "Nea Ionia",
+                "x": 396,
+                "y": 269,
+                "rad": 7
+            },
+            {
+                "name": "Pefkakia",
+                "x": 373,
+                "y": 289,
+                "rad": 7
+            },
+            {
+                "name": "Perissos",
+                "x": 348,
+                "y": 311,
+                "rad": 7
+            },
+            {
+                "name": "Ano Patissia",
+                "x": 325,
+                "y": 334,
+                "rad": 7
+            },
+            {
+                "name": "Aghios Eleftherios",
+                "x": 300,
+                "y": 357,
+                "rad": 7
+            },
+            {
+                "name": "Kato Patissia",
+                "x": 272,
+                "y": 382,
+                "rad": 7
+            },
+            {
+                "name": "Aghios Nikolaos",
+                "x": 245,
+                "y": 407,
+                "rad": 7
+            },
+            {
+                "name": "Attiki-Verde",
+                "x": 223,
+                "y": 427,
+                "rad": 7
+            },
+            {
+                "name": "Victoria",
+                "x": 269,
+                "y": 486,
+                "rad": 7
+            },
+            {
+                "name": "Omonia-Verde",
+                "x": 269,
+                "y": 520,
+                "rad": 7
+            },
+            {
+                "name": "Monastiraki-Verde",
+                "x": 269,
+                "y": 560,
+                "rad": 7
+            },
+            {
+                "name": "Thissio",
+                "x": 269,
+                "y": 604,
+                "rad": 7
+            },
+            {
+                "name": "Petralona",
+                "x": 257,
+                "y": 632,
+                "rad": 7
+            },
+            {
+                "name": "Tavros",
+                "x": 227,
+                "y": 658,
+                "rad": 7
+            },
+            {
+                "name": "Kallithea",
+                "x": 200,
+                "y": 685,
+                "rad": 7
+            },
+            {
+                "name": "Moschato",
+                "x": 172,
+                "y": 710,
+                "rad": 7
+            },
+            {
+                "name": "Faliro",
+                "x": 139,
+                "y": 737,
+                "rad": 7
+            },
+            {
+                "name": "Piraeus",
+                "x": 27,
+                "y": 749,
+                "rad": 7
+            }
+        ]
+      },
+      {
+        "color": "Azul",
+        "nodes": [
+            {
+                "name": "Egaleo",
+                "x": 67,
+                "y": 463,
+                "rad": 7
+            },
+            {
+                "name": "Eleonas",
+                "x": 120,
+                "y": 512,
+                "rad": 7
+            },
+            {
+                "name": "Kerameikos",
+                "x": 162,
+                "y": 550,
+                "rad": 7
+            },
+            {
+                "name": "Monastiraki-Azul",
+                "x": 252,
+                "y": 560,
+                "rad": 7
+            },
+            {
+                "name": "Syntagma-Azul",
+                "x": 335,
+                "y": 560,
+                "rad": 7
+            },
+            {
+                "name": "Evangelismos",
+                "x": 399,
+                "y": 560,
+                "rad": 7
+            },
+            {
+                "name": "Megaro Moussikis",
+                "x": 468,
+                "y": 549,
+                "rad": 7
+            },
+            {
+                "name": "Ambelokipi",
+                "x": 490,
+                "y": 527,
+                "rad": 7
+            },
+            {
+                "name": "Panormou",
+                "x": 513,
+                "y": 507,
+                "rad": 7
+            },
+            {
+                "name": "Katehaki",
+                "x": 534,
+                "y": 486,
+                "rad": 7
+            },
+            {
+                "name": "Ethniki Amyna",
+                "x": 556,
+                "y": 465,
+                "rad": 7
+            },
+            {
+                "name": "Holargos",
+                "x": 579,
+                "y": 445,
+                "rad": 7
+            },
+            {
+                "name": "Nomismatokopio",
+                "x": 602,
+                "y": 425,
+                "rad": 7
+            },
+            {
+                "name": "Aghia Paraskevi",
+                "x": 624,
+                "y": 404,
+                "rad": 7
+            },
+            {
+                "name": "Halandri",
+                "x": 646,
+                "y": 384,
+                "rad": 7
+            },
+            {
+                "name": "Doukissis Plakentias",
+                "x": 683,
+                "y": 352,
+                "rad": 7
+            },
+            {
+                "name": "Pallini",
+                "x": 745,
+                "y": 375,
+                "rad": 7
+            },
+            {
+                "name": "Paiania - Kantza",
+                "x": 745,
+                "y": 429,
+                "rad": 7
+            },
+            {
+                "name": "Koropi",
+                "x": 745,
+                "y": 550,
+                "rad": 7
+            },
+            {
+                "name": "Airport",
+                "x": 822,
+                "y": 580,
+                "rad": 7
+            }
+        ]
+      },
+      {
+        "color": "Rojo",
+        "nodes": [
+            {
+                "name": "Aghios Antonios",
+                "x": 143,
+                "y": 353,
+                "rad": 7
+            },
+            {
+                "name": "Sepolia",
+                "x": 184,
+                "y": 391,
+                "rad": 7
+            },
+            {
+                "name": "Attiki-Rojo",
+                "x": 223,
+                "y": 445,
+                "rad": 7
+            },
+            {
+                "name": "Larissa Station",
+                "x": 223,
+                "y": 467,
+                "rad": 7
+            },
+            {
+                "name": "Metaxourghio",
+                "x": 223,
+                "y": 500,
+                "rad": 7
+            },
+            {
+                "name": "Omonia-Rojo",
+                "x": 252,
+                "y": 520,
+                "rad": 7
+            },
+            {
+                "name": "Panepistimio",
+                "x": 294,
+                "y": 540,
+                "rad": 7
+            },
+            {
+                "name": "Syntagma-Rojo",
+                "x": 317,
+                "y": 560,
+                "rad": 7
+            },
+            {
+                "name": "Akropoli",
+                "x": 321,
+                "y": 607,
+                "rad": 7
+            },
+            {
+                "name": "Sygrou-Fix",
+                "x": 321,
+                "y": 641,
+                "rad": 7
+            },
+            {
+                "name": "Neos Kosmos",
+                "x": 321,
+                "y": 676,
+                "rad": 7
+            },
+            {
+                "name": "Aghios Ioannis",
+                "x": 321,
+                "y": 710,
+                "rad": 7
+            },
+            {
+                "name": "Dafni",
+                "x": 321,
+                "y": 743,
+                "rad": 7
+            },
+            {
+                "name": "Aghios Dimitrios · Alexandros Panagoulis",
+                "x": 321,
+                "y": 776,
+                "rad": 7
+            }
+        ]
+      }
+    ]
+  }
