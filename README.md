@@ -50,9 +50,11 @@ En este repo se cubren las siguientes asignaturas:
     - [@RESKOM326](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/ProgramacionII)
     - [Clase de Apoyo a Orientación a Objetos](https://github.com/M-T3K/UPM/tree/master/Clases%20de%20Apoyo/Objetos%20-%2024Abril2018)
 - [Probabilidad y Estadística I 17'-18](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/ProbabilidadI/)
-- Sistemas Digitales 17'-18'
-    - [@PRINCE_KIWII](https://github.com/M-T3K/UPM/tree/master/Sistemas%20Digitales)
-    - [@RESKOM326](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/SistemasDigitales/)
+- Lógica
+    - [@square.wheel 19'-20'](https://github.com/M-T3K/UPM/tree/master/Logica/)
+- Sistemas Digitales
+    - [@PRINCE_KIWII 17'-18'](https://github.com/M-T3K/UPM/tree/master/Sistemas%20Digitales)
+    - [@RESKOM326 17'-18'](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/SistemasDigitales/)
 - Algoritmos y Estructuras de Datos 18'-19'
     - [@PRINCE_KIWII](https://github.com/M-T3K/UPM/tree/master/AlgoritmosEstructurasDeDatos)
     - [@RESKOM326](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Segundo/AED/aed)
@@ -78,9 +80,10 @@ En este repo se cubren las siguientes asignaturas:
 - [Inteligencia Artificial 19'-20'](https://github.com/M-T3K/UPM/tree/master/IA2K20)
 - [Ingeniería del Software I 19'-20'](https://github.com/M-T3K/UPM/tree/master/IS1)
 - [Sistemas Distribuidos](https://github.com/M-T3K/UPM/tree/master/SistemasDistribuidos/)
+- [Administracion de Sistemas Informaticos](https://github.com/M-T3K/UPM/tree/master/ASI/)
 
 ## Grupos
-Habrá ocasiones que haya código de más de un Grupo de clase o año. Esto dependerá de quien Contribuya al Repositorio o de quiénes me hayan dado permiso para incluir su código en el mismo.
+Habrá ocasiones que haya código de más de un grupo de clase o año. Esto dependerá de quien Contribuya al Repositorio o de quiénes me hayan dado permiso para incluir su código en el mismo.
 
 ## Clases de Apoyo
 
@@ -148,3 +151,10 @@ Sección con información acerca de las personas que contribuyen a este repo.
         + Telegram: _______
         + Github: [Aquí](https://github.com/realfranser)
         + E-Mail: serranoarresejavier@gmail.com
+
++ square.wheel:
+    + Contribuyente.
+    + Contacto:
+        + Telegram: _______
+        + Gitlab: [Aquí](https://gitlab.com/square_wheel)
+        + E-Mail: _______

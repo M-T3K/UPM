@@ -1,0 +1,213 @@
+; Este programa en Z3 fue realizado para
+; la asignatura de Lógica de la carreta
+; Matemáticas e Informática de la UPM
+; -------------------------------------
+; Autor: Lucas López Santibáñez
+
+; Enumeraciones de los colores, países...
+; https://rise4fun.com/z3/tutorialcontent/guide
+
+(declare-datatypes () ((Bebida Te Cafe Leche Cerveza Agua)))
+(declare-datatypes () ((Color Amarillo Azul Blanco Rojo Verde)))
+(declare-datatypes () ((Mascota Perro Pajaro Gato Caballo Pez)))
+(declare-datatypes () ((Nacionalidad Aleman Britanico Danes Noruego Sueco)))
+(declare-datatypes () ((Tabaco PallMall Dunhill Blends Bluemasters Prince)))
+
+; Tipo de datos con la información de una casa y su propietario
+; https://stackoverflow.com/questions/41478847/records-with-z3
+
+(declare-datatypes () ((Casa (mk-Casa
+	(bebida Bebida)
+	(color Color)
+	(mascota Mascota)
+	(ndad Nacionalidad)
+	(tabaco Tabaco)
+))))
+
+; Declaración de las casas de izquierda a derecha
+
+(declare-const a Casa)
+(declare-const b Casa)
+(declare-const c Casa)
+(declare-const d Casa)
+(declare-const e Casa)
+
+; No hay información duplicada
+
+(assert (distinct (bebida a) (bebida b) (bebida c) (bebida d) (bebida e)))
+(assert (distinct (color a) (color b) (color c) (color d) (color e)))
+(assert (distinct (mascota a) (mascota b) (mascota c) (mascota d) (mascota e)))
+(assert (distinct (ndad a) (ndad b) (ndad c) (ndad d) (ndad e)))
+(assert (distinct (tabaco a) (tabaco b) (tabaco c) (tabaco d) (tabaco e)))
+
+; 1. El británico vive en la casa roja
+
+(define-fun cond!1 ((x Casa)) Bool
+	(=> (= (ndad x) Britanico) (= (color x) Rojo))
+)
+
+(assert (cond!1 a))
+(assert (cond!1 b))
+(assert (cond!1 c))
+(assert (cond!1 d))
+(assert (cond!1 e))
+
+; 2. El sueco tiene un perro como mascota
+
+(define-fun cond!2 ((x Casa)) Bool
+	(=> (= (ndad x) Sueco) (= (mascota x) Perro))
+)
+
+(assert (cond!2 a))
+(assert (cond!2 b))
+(assert (cond!2 c))
+(assert (cond!2 d))
+(assert (cond!2 e))
+
+; 3. El danés toma té
+
+(define-fun cond!3 ((x Casa)) Bool
+	(=> (= (ndad x) Danes) (= (bebida x) Te))
+)
+
+(assert (cond!3 a))
+(assert (cond!3 b))
+(assert (cond!3 c))
+(assert (cond!3 d))
+(assert (cond!3 e))
+
+; 4. El noruego vive en la primera casa
+
+(assert (= (ndad a) Noruego))
+
+; 5. El alemán fuma Prince
+
+(define-fun cond!5 ((x Casa)) Bool
+	(=> (= (ndad x) Aleman) (= (tabaco x) Prince))
+)
+
+(assert (cond!5 a))
+(assert (cond!5 b))
+(assert (cond!5 c))
+(assert (cond!5 d))
+(assert (cond!5 e))
+
+; 6. La casa verde está inmediatamente a la izquierda de la blanca
+
+(define-fun cond!6 ((x Casa) (y Casa)) Bool
+	(=> (= (color x) Verde) (= (color y) Blanco))
+)
+
+(assert (cond!6 a b))
+(assert (cond!6 b c))
+(assert (cond!6 c d))
+(assert (cond!6 d e))
+(assert-not (= (color e) Verde))
+
+; 7. El dueño de la casa verde toma café
+
+(define-fun cond!7 ((x Casa)) Bool
+	(=> (= (color x) Verde) (= (bebida x) Cafe))
+)
+
+(assert (cond!7 a))
+(assert (cond!7 b))
+(assert (cond!7 c))
+(assert (cond!7 d))
+(assert (cond!7 e))
+
+; 8. El propietario que fuma Pall Mall cría pájaros
+
+(define-fun cond!8 ((x Casa)) Bool
+	(=> (= (tabaco x) PallMall) (= (mascota x) Pajaro))
+)
+
+(assert (cond!8 a))
+(assert (cond!8 b))
+(assert (cond!8 c))
+(assert (cond!8 d))
+(assert (cond!8 e))
+
+; 9. El dueño de la casa amarilla fuma Dunhill
+
+(define-fun cond!9 ((x Casa)) Bool
+	(=> (= (color x) Amarillo) (= (tabaco x) Dunhill))
+)
+
+(assert (cond!9 a))
+(assert (cond!9 b))
+(assert (cond!9 c))
+(assert (cond!9 d))
+(assert (cond!9 e))
+
+; 10. El hombre que vive en la casa del centro bebe leche
+
+(assert (= (bebida c) Leche))
+
+; 11. El vecino que fuma Blends vive junto al que tiene un gato
+
+(define-fun cond!11 ((x Casa) (y Casa)) Bool
+	(=> (= (tabaco x) Blends) (= (mascota y) Gato))
+)
+
+(assert (cond!11 a b))
+(assert (or (cond!11 b a) (cond!11 b c)))
+(assert (or (cond!11 c b) (cond!11 c d)))
+(assert (or (cond!11 d c) (cond!11 d e)))
+(assert (cond!11 e d))
+
+; 12. La persona que tiene un caballo vive junto a la que fuma Dunhill
+
+(define-fun cond!12 ((x Casa) (y Casa)) Bool
+	(=> (= (mascota x) Caballo) (= (tabaco y) Dunhill))
+)
+
+(assert (cond!12 a b))
+(assert (or (cond!12 b a) (cond!12 b c)))
+(assert (or (cond!12 c b) (cond!12 c d)))
+(assert (or (cond!12 d c) (cond!12 d e)))
+(assert (cond!12 e d))
+
+; 13. El que fuma Bluemasters bebe cerveza
+
+(define-fun cond!13 ((x Casa)) Bool
+	(=> (= (tabaco x) Bluemasters) (= (bebida x) Cerveza))
+)
+
+(assert (cond!13 a))
+(assert (cond!13 b))
+(assert (cond!13 c))
+(assert (cond!13 d))
+(assert (cond!13 e))
+
+; 14. El que fuma Blends tiene un vecino que toma agua
+
+(define-fun cond!14 ((x Casa) (y Casa)) Bool
+	(=> (= (tabaco x) Blends) (= (bebida y) Agua))
+)
+
+(assert (cond!14 a b))
+(assert (or (cond!14 b a) (cond!14 b c)))
+(assert (or (cond!14 c b) (cond!14 c d)))
+(assert (or (cond!14 d c) (cond!14 d e)))
+(assert (cond!14 e d))
+
+; 15. El noruego vive junto a la casa azul
+
+(define-fun cond!15 ((x Casa) (y Casa)) Bool
+	(=> (= (ndad x) Noruego) (= (color y) Azul))
+)
+
+(assert (cond!15 a b))
+(assert (or (cond!15 b a) (cond!15 b c)))
+(assert (or (cond!15 c b) (cond!15 c d)))
+(assert (or (cond!15 d c) (cond!15 d e)))
+(assert (cond!15 e d))
+
+; Mostrar el modelo
+
+(check-sat)
+(get-model)
+(echo "--------------------")
+(echo "El modelo es único, y por tanto la solución")
+(echo "del acertijo es que el pez es del vecino alemán")
