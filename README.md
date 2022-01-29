@@ -77,7 +77,9 @@ En este repo se cubren las siguientes asignaturas:
     - [@PRINCE_KIWII 19'-20'](https://github.com/M-T3K/UPM/tree/master/Bases/Bases2k20)
 - [Sistemas Optoelectrónicos 19'-20'](https://github.com/M-T3K/UPM/tree/master/SOE): A partir del curso 20'-21' esta asignatura ha dejado de impartirse.
 - [Procesadores de Lenguajes 19'-20'](https://github.com/M-T3K/UPM/tree/master/PDL)
-- [Inteligencia Artificial 19'-20'](https://github.com/M-T3K/UPM/tree/master/IA2K20)
+- [Inteligencia Artificial](https://github.com/M-T3K/UPM/tree/master/IA)
+    - [@PRINCE_KIWII  19'-20'](https://github.com/M-T3K/UPM/tree/master/IA2K20)
+    - [@PRINCE_KIWII  20'-21'](https://github.com/M-T3K/UPM/tree/master/IA2K21)
 - [Ingeniería del Software I 19'-20'](https://github.com/M-T3K/UPM/tree/master/IS1)
 - [Sistemas Distribuidos](https://github.com/M-T3K/UPM/tree/master/SistemasDistribuidos/)
 - [Administracion de Sistemas Informaticos](https://github.com/M-T3K/UPM/tree/master/ASI/)
