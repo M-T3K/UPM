@@ -4,3 +4,45 @@
 [submodule "ETSIINFUPM"]
 	path = ETSIINFUPM
 	url = https://github.com/RESKOM326/ETSIINFUPM
+[submodule "ASI/ASI2014"]
+	path = ASI/ASI2014
+	url = https://github.com/skgsergio/ASI2014.git
+[submodule "TFGM/Portada-UPM-ETSIINF"]
+	path = TFGM/Portada-UPM-ETSIINF
+	url = https://github.com/skgsergio/Portada-UPM-ETSIINF
+[submodule "SemanticWebLinkedData/Curso2019-2020-OpenDataKnowledgeGraphs"]
+	path = SemanticWebLinkedData/Curso2019-2020-OpenDataKnowledgeGraphs
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2019-2020-OpenDataKnowledgeGraphs
+[submodule "SemanticWebLinkedData/Curso2018-2019"]
+	path = SemanticWebLinkedData/Curso2018-2019
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2018-2019
+[submodule "SemanticWebLinkedData/Curso2021-2022-ODKG"]
+	path = SemanticWebLinkedData/Curso2021-2022-ODKG
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2021-2022-ODKG
+[submodule "SemanticWebLinkedData/Curso2021-2022-DataScience"]
+	path = SemanticWebLinkedData/Curso2021-2022-DataScience
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2021-2022-DataScience
+[submodule "SemanticWebLinkedData/Curso2021-2022"]
+	path = SemanticWebLinkedData/Curso2021-2022
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2021-2022
+[submodule "SemanticWebLinkedData/Curso2020-2021"]
+	path = SemanticWebLinkedData/Curso2020-2021
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2020-2021
+[submodule "SemanticWebLinkedData/Curso2019-2020"]
+	path = SemanticWebLinkedData/Curso2019-2020
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2019-2020
+[submodule "SemanticWebLinkedData/Curso2015-2016"]
+	path = SemanticWebLinkedData/Curso2015-2016
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2015-2016
+[submodule "SemanticWebLinkedData/Curso2013-2014"]
+	path = SemanticWebLinkedData/Curso2013-2014
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2013-2014
+[submodule "SemanticWebLinkedData/Curso2014-2015"]
+	path = SemanticWebLinkedData/Curso2014-2015
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2014-2015
+[submodule "DAW/practica-daw"]
+	path = DAW/practica-daw
+	url = https://github.com/skgsergio/practica-daw
+[submodule "SemanticWebLinkedData/Curso2017-2018"]
+	path = SemanticWebLinkedData/Curso2017-2018
+	url = https://github.com/FacultadInformatica-LinkedData/Curso2017-2018

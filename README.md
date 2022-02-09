@@ -84,6 +84,14 @@ En este repo se cubren las siguientes asignaturas:
 - [Ingeniería del Software I 19'-20'](https://github.com/M-T3K/UPM/tree/master/IS1)
 - [Sistemas Distribuidos](https://github.com/M-T3K/UPM/tree/master/SistemasDistribuidos/)
 - [Administracion de Sistemas Informaticos](https://github.com/M-T3K/UPM/tree/master/ASI/)
+    - [@SKGSERGIO  13'-14'](https://github.com/M-T3K/UPM/tree/master/ASI/ASI2014)
+    - [@PRINCE_KIWII  20'-21'](https://github.com/M-T3K/UPM/tree/master/ASI2K21)
+- [Desarrollo de Aplicaciones Web](https://github.com/M-T3K/UPM/tree/master/DAW/)
+    - [@SKGSERGIO  14'-15'](https://github.com/M-T3K/UPM/tree/master/DAW/practica-daw)
+- [Semantic Web, Linked Data and Knowledge Graphs](https://github.com/M-T3K/UPM/tree/master/SemanticWebLinkedData/)
+    - [@FacultadInformatica-LinkedData](https://github.com/FacultadInformatica-LinkedData): La cuenta oficial de la asignatura con todos los repositorios añadidos como submodulos a este repositorio.
+- [Trabajo de Fin de Grado & Master](https://github.com/M-T3K/UPM/tree/master/TFGM/)
+    - [@SKGSERGIO Portada](https://github.com/M-T3K/UPM/tree/master/TFGM/Portada-UPM-ETSIINF)
 
 ## Grupos
 Habrá ocasiones que haya código de más de un grupo de clase o año. Esto dependerá de quien Contribuya al Repositorio o de quiénes me hayan dado permiso para incluir su código en el mismo.
@@ -134,7 +142,7 @@ Sección con información acerca de las personas que contribuyen a este repo.
         + E-Mail: _______
         + 
 
-+ ALEJAX0:
++ ALEJAX:
     + Contribuyente.
     + Contacto:
         + Telegram: _______
@@ -160,4 +168,11 @@ Sección con información acerca de las personas que contribuyen a este repo.
     + Contacto:
         + Telegram: _______
         + Gitlab: [Aquí](https://gitlab.com/square_wheel)
+        + E-Mail: _______
+
++ skgsergio:
+    + Contribuyente.
+    + Contacto:
+        + Telegram: _______
+        + Github: [Aquí](https://github.com/skgsergio)
         + E-Mail: _______
