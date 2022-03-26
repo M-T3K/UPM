@@ -83,6 +83,8 @@ En este repo se cubren las siguientes asignaturas:
     - [@RACCAPS 19'-20'](https://github.com/rubenaguadoc/practica-ia)
 - [Ingeniería del Software I 19'-20'](https://github.com/M-T3K/UPM/tree/master/IS1)
 - [Sistemas Distribuidos](https://github.com/M-T3K/UPM/tree/master/SistemasDistribuidos/)
+- [Programación Declarativa (Prolog)](https://github.com/M-T3K/UPM/tree/master/Prolog/)
+    - [@PRINCE_KIWII & @Akroli  20'-21'](https://github.com/M-T3K/UPM/tree/master/Prolog/)
 - [Administracion de Sistemas Informaticos](https://github.com/M-T3K/UPM/tree/master/ASI/)
     - [@SKGSERGIO  13'-14'](https://github.com/M-T3K/UPM/tree/master/ASI/ASI2014)
     - [@PRINCE_KIWII  20'-21'](https://github.com/M-T3K/UPM/tree/master/ASI2K21)
