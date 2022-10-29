@@ -1,0 +1,231 @@
+; Este programa en Z3 fue realizado para
+; la asignatura de Logica de primer curso Informática de la UPM
+; -------------------------------------
+; Autor: César Lozano Argüeso
+; Curso: 2021-2022 
+; Nota proyecto: 10
+
+;---- A: orilla de salida----
+;---- B: orilla de destino----
+ 
+;---- DECLARACIÓN DE VARIABLES ----
+ 
+;----Posición del lobo en cada paso----
+ 
+(declare-const LoboB1 bool); Lobo en B - Paso 1
+(declare-const LoboB2 bool); Lobo en B - Paso 2
+(declare-const LoboB3 bool); Lobo en B - Paso 3
+(declare-const LoboB4 bool); Lobo en B - Paso 4
+(declare-const LoboB5 bool); Lobo en B - Paso 5
+(declare-const LoboB6 bool); Lobo en B - Paso 6
+(declare-const LoboB7 bool); Lobo en B - Paso 7
+(declare-const LoboB8 bool); Lobo en B - Paso final
+ 
+;----Posición de la cabra en cada paso----
+ 
+(declare-const CabraB1 bool); Cabra en B - Paso 1
+(declare-const CabraB2 bool); Cabra en B - Paso 2
+(declare-const CabraB3 bool); Cabra en B - Paso 3
+(declare-const CabraB4 bool); Cabra en B - Paso 4
+(declare-const CabraB5 bool); Cabra en B - Paso 5
+(declare-const CabraB6 bool); Cabra en B - Paso 6
+(declare-const CabraB7 bool); Cabra en B - Paso 7
+(declare-const CabraB8 bool); Cabra en B - Paso final
+ 
+;----Posición de la lechuga en cada paso----
+ 
+(declare-const LechB1 bool); Lechuga en B - Paso 1
+(declare-const LechB2 bool); Lechuga en B - Paso 2
+(declare-const LechB3 bool); Lechuga en B - Paso 3
+(declare-const LechB4 bool); Lechuga en B - Paso 4
+(declare-const LechB5 bool); Lechuga en B - Paso 5
+(declare-const LechB6 bool); Lechuga en B - Paso 6
+(declare-const LechB7 bool); Lechuga en B - Paso 7
+(declare-const LechB8 bool); Lechuga en B - Paso 8
+ 
+;----Posición del granjero en cada paso----
+ 
+(declare-const GranB1 bool); Granjero en B - Paso 1
+(declare-const GranB2 bool); Granjero en B - Paso 2
+(declare-const GranB3 bool); Granjero en B - Paso 3
+(declare-const GranB4 bool); Granjero en B - Paso 4
+(declare-const GranB5 bool); Granjero en B - Paso 5
+(declare-const GranB6 bool); Granjero en B - Paso 6
+(declare-const GranB7 bool); Granjero en B - Paso 7
+(declare-const GranB8 bool); Granjero en B - Paso 8
+ 
+;----Comprobación del lobo en la barca en cada paso---- 
+ 
+(declare-const LoBarc1 bool); Lobo en la barca - Paso 1
+(declare-const LoBarc2 bool); Lobo en la barca - Paso 2
+(declare-const LoBarc3 bool); Lobo en la barca - Paso 3
+(declare-const LoBarc4 bool); Lobo en la barca - Paso 4
+(declare-const LoBarc5 bool); Lobo en la barca - Paso 5
+(declare-const LoBarc6 bool); Lobo en la barca - Paso 6
+(declare-const LoBarc7 bool); Lobo en la barca - Paso 7
+ 
+;----Comprobación de la cabra en la barca en cada paso----
+ 
+(declare-const CaBarca1 bool); Cabra en la barca - Paso 1
+(declare-const CaBarca2 bool); Cabra en la barca - Paso 2
+(declare-const CaBarca3 bool); Cabra en la barca - Paso 3
+(declare-const CaBarca4 bool); Cabra en la barca - Paso 4
+(declare-const CaBarca5 bool); Cabra en la barca - Paso 5
+(declare-const CaBarca6 bool); Cabra en la barca - Paso 6
+(declare-const CaBarca7 bool); Cabra en la barca - Paso 7
+ 
+;----Comprobación de la lechuga en la barca en cada paso----
+ 
+(declare-const LeBarca1 bool); Lechuga en la barca - Paso 1
+(declare-const LeBarca2 bool); Lechuga en la barca - Paso 2
+(declare-const LeBarca3 bool); Lechuga en la barca - Paso 3
+(declare-const LeBarca4 bool); Lechuga en la barca - Paso 4
+(declare-const LeBarca5 bool); Lechuga en la barca - Paso 5
+(declare-const LeBarca6 bool); Lechuga en la barca - Paso 6
+(declare-const LeBarca7 bool); Lechuga en la barca - Paso 7
+ 
+;-------------------------------------------------------------------
+ 
+;Si el lobo está solo con cabra se la come (depende de GranB): 
+; ¬((LoboB ∧ CabraB ∧ ¬GranB) ∨ (¬LoboB ∧ ¬CabraB ∧ GranB)):
+ 
+(assert (not (or (and LoboB1 CabraB1 (not GranB1)) (and (not LoboB1) (not CabraB1) GranB1)))); No cabra con lobo - Paso 1
+(assert (not (or (and LoboB2 CabraB2 (not GranB2)) (and (not LoboB2) (not CabraB2) GranB2)))); No cabra con lobo - Paso 2
+(assert (not (or (and LoboB3 CabraB3 (not GranB3)) (and (not LoboB3) (not CabraB3) GranB3)))); No cabra con lobo - Paso 3
+(assert (not (or (and LoboB4 CabraB4 (not GranB4)) (and (not LoboB4) (not CabraB4) GranB4)))); No cabra con lobo - Paso 4
+(assert (not (or (and LoboB5 CabraB5 (not GranB5)) (and (not LoboB5) (not CabraB5) GranB5)))); No cabra con lobo - Paso 5
+(assert (not (or (and LoboB6 CabraB6 (not GranB6)) (and (not LoboB6) (not CabraB6) GranB6)))); No cabra con lobo - Paso 6
+(assert (not (or (and LoboB7 CabraB7 (not GranB7)) (and (not LoboB7) (not CabraB7) GranB7)))); No cabra con lobo - Paso 7
+ 
+;Cabra con lechuga no se puede
+; ¬((CabraB ∧ LechB ∧ ¬GranB) ∨ (¬CabraB ∧ ¬LechB ∧ GranB)):
+ 
+(assert (not (or (and CabraB1 LechB1 (not GranB1)) (and (not CabraB1) (not LechB1) GranB1)))); No cabra con lechuga - Paso 1
+(assert (not (or (and CabraB2 LechB2 (not GranB2)) (and (not CabraB2) (not LechB2) GranB2)))); No cabra con lechuga - Paso 2
+(assert (not (or (and CabraB3 LechB3 (not GranB3)) (and (not CabraB3) (not LechB3) GranB3)))); No cabra con lechuga - Paso 3
+(assert (not (or (and CabraB4 LechB4 (not GranB4)) (and (not CabraB4) (not LechB4) GranB4)))); No cabra con lechuga - Paso 4
+(assert (not (or (and CabraB5 LechB5 (not GranB5)) (and (not CabraB5) (not LechB5) GranB5)))); No cabra con lechuga - Paso 5
+(assert (not (or (and CabraB6 LechB6 (not GranB6)) (and (not CabraB6) (not LechB6) GranB6)))); No cabra con lechuga - Paso 6
+(assert (not (or (and CabraB7 LechB7 (not GranB7)) (and (not CabraB7) (not LechB7) GranB7)))); No cabra con lechuga - Paso 7
+ 
+;------------------------------------------
+;SOLO UNA COSA EN LA BARCA 
+ 
+;Lobo solo en la barca para cada paso
+ 
+(assert (=> LoBarc1 (and (not CaBarca1) (not LeBarca1)))); Solo el Lobo en la barca - Paso 1
+(assert (=> LoBarc2 (and (not CaBarca2) (not LeBarca2)))); Solo el Lobo en la barca - Paso 2
+(assert (=> LoBarc3 (and (not CaBarca3) (not LeBarca3)))); Solo el Lobo en la barca - Paso 3
+(assert (=> LoBarc4 (and (not CaBarca4) (not LeBarca4)))); Solo el Lobo en la barca - Paso 4
+(assert (=> LoBarc5 (and (not CaBarca5) (not LeBarca5)))); Solo el Lobo en la barca - Paso 5
+(assert (=> LoBarc6 (and (not CaBarca6) (not LeBarca6)))); Solo el Lobo en la barca - Paso 6
+(assert (=> LoBarc7 (and (not CaBarca7) (not LeBarca7)))); Solo el Lobo en la barca - Paso 7
+ 
+;Cabra solo en la barca para cada paso
+ 
+(assert (=> CaBarca1 (and (not LoBarc1) (not LeBarca1)))); Solo la Cabra en la barca - Paso 1
+(assert (=> CaBarca2 (and (not LoBarc2) (not LeBarca2)))); Solo la Cabra en la barca - Paso 2
+(assert (=> CaBarca3 (and (not LoBarc3) (not LeBarca3)))); Solo la Cabra en la barca - Paso 3
+(assert (=> CaBarca4 (and (not LoBarc4) (not LeBarca4)))); Solo la Cabra en la barca - Paso 4
+(assert (=> CaBarca5 (and (not LoBarc5) (not LeBarca5)))); Solo la Cabra en la barca - Paso 5
+(assert (=> CaBarca6 (and (not LoBarc6) (not LeBarca6)))); Solo la Cabra en la barca - Paso 6
+(assert (=> CaBarca7 (and (not LoBarc7) (not LeBarca7)))); Solo la Cabra en la barca - Paso 7
+ 
+;Lechuga solo en la barca para cada paso
+ 
+(assert (=> LeBarca1 (and (not LoBarc1) (not CaBarca1)))); Solo la Lechuga en la barca - Paso 1
+(assert (=> LeBarca2 (and (not LoBarc2) (not CaBarca2)))); Solo la Lechuga en la barca - Paso 2
+(assert (=> LeBarca3 (and (not LoBarc3) (not CaBarca3)))); Solo la Lechuga en la barca - Paso 3
+(assert (=> LeBarca4 (and (not LoBarc4) (not CaBarca4)))); Solo la Lechuga en la barca - Paso 4
+(assert (=> LeBarca5 (and (not LoBarc5) (not CaBarca5)))); Solo la Lechuga en la barca - Paso 5
+(assert (=> LeBarca6 (and (not LoBarc6) (not CaBarca6)))); Solo la Lechuga en la barca - Paso 6
+(assert (=> LeBarca7 (and (not LoBarc7) (not CaBarca7)))); Solo la Lechuga en la barca - Paso 7
+ 
+;------------------------------------------
+;Si hay algo en una orilla, pasa a la otra cuando lo monto en la barca
+;Lobo
+(assert (=> (and LoBarc1 (not LoboB1) (not GranB1))(and LoboB2 GranB2))); Traslado de lobo - Paso 1
+(assert (=> (and LoBarc2 (not LoboB2) (not GranB2))(and LoboB3 GranB3))); Traslado de lobo - Paso 2
+(assert (=> (and LoBarc3 (not LoboB3) (not GranB3))(and LoboB4 GranB4))); Traslado de lobo - Paso 3
+(assert (=> (and LoBarc4 (not LoboB4) (not GranB4))(and LoboB5 GranB5))); Traslado de lobo - Paso 4
+(assert (=> (and LoBarc5 (not LoboB5) (not GranB5))(and LoboB6 GranB6))); Traslado de lobo - Paso 5
+(assert (=> (and LoBarc6 (not LoboB6) (not GranB6))(and LoboB7 GranB7))); Traslado de lobo - Paso 6
+(assert (=> (and LoBarc7 (not LoboB7) (not GranB7))(and LoboB8 GranB8))); Traslado de lobo - Paso 7
+ 
+ 
+;Cabra
+(assert (=> (and CaBarca1 (not CabraB1) (not GranB1))(and CabraB2 GranB2))); Traslado de la cabra - Paso 1
+(assert (=> (and CaBarca2 (not CabraB2) (not GranB2))(and CabraB3 GranB3))); Traslado de la cabra - Paso 2
+(assert (=> (and CaBarca3 (not CabraB3) (not GranB3))(and CabraB4 GranB4))); Traslado de la cabra - Paso 3
+(assert (=> (and CaBarca4 (not CabraB4) (not GranB4))(and CabraB5 GranB5))); Traslado de la cabra - Paso 4
+(assert (=> (and CaBarca5 (not CabraB5) (not GranB5))(and CabraB6 GranB6))); Traslado de la cabra - Paso 5
+(assert (=> (and CaBarca6 (not CabraB6) (not GranB6))(and CabraB7 GranB7))); Traslado de la cabra - Paso 6
+(assert (=> (and CaBarca7 (not CabraB7) (not GranB7))(and CabraB8 GranB8))); Traslado de la cabra - Paso 7
+; Vuelta de la cabra
+(assert (=> (and CaBarca1 CabraB1 GranB1)(and (not CabraB2) (not GranB2)))); Traslado de la cabra - Paso 1
+(assert (=> (and CaBarca2 CabraB2 GranB2)(and (not CabraB3) (not GranB3)))); Traslado de la cabra - Paso 2
+(assert (=> (and CaBarca3 CabraB3 GranB3)(and (not CabraB4) (not GranB4)))); Traslado de la cabra - Paso 3
+(assert (=> (and CaBarca4 CabraB4 GranB4)(and (not CabraB5) (not GranB5)))); Traslado de la cabra - Paso 4
+(assert (=> (and CaBarca5 CabraB5 GranB5)(and (not CabraB6) (not GranB6)))); Traslado de la cabra - Paso 5
+(assert (=> (and CaBarca6 CabraB6 GranB6)(and (not CabraB7) (not GranB7)))); Traslado de la cabra - Paso 6
+(assert (=> (and CaBarca7 CabraB7 GranB7)(and (not CabraB8) (not GranB8)))); Traslado de la cabra - Paso 7
+ 
+;Lechuga
+(assert (=> (and LeBarca1 (not LechB1) (not GranB1))(and LechB2 GranB2))); Traslado de la cabra - Paso 1
+(assert (=> (and LeBarca2 (not LechB2) (not GranB2))(and LechB3 GranB3))); Traslado de la cabra - Paso 2
+(assert (=> (and LeBarca3 (not LechB3) (not GranB3))(and LechB4 GranB4))); Traslado de la cabra - Paso 3
+(assert (=> (and LeBarca4 (not LechB4) (not GranB4))(and LechB5 GranB5))); Traslado de la cabra - Paso 4
+(assert (=> (and LeBarca5 (not LechB5) (not GranB5))(and LechB6 GranB6))); Traslado de la cabra - Paso 5
+(assert (=> (and LeBarca6 (not LechB6) (not GranB6))(and LechB7 GranB7))); Traslado de la cabra - Paso 6
+(assert (=> (and LeBarca6 (not LechB6) (not GranB6))(and LechB7 GranB7))); Traslado de la cabra - Paso 7
+(assert (=> (and LeBarca7 (not LechB7) (not GranB7))(and LechB8 GranB8))); Traslado de la cabra - Paso 8
+ 
+;-------------------------------------------
+ 
+;Si tengo una cosa en B y justo antes la he tenido en A, implica que el granjero estaba en A y ahora esta en B y que se ha subido a la barca con esa cosa
+ 
+(assert (=> (and LechB2  (not LechB1)) (and (not GranB1) GranB2 LeBarca1))); Lechuga Paso 1
+(assert (=> (and LechB3  (not LechB2)) (and (not GranB2) GranB3 LeBarca2))); Lechuga Paso 2
+(assert (=> (and LechB4  (not LechB3)) (and (not GranB3) GranB4 LeBarca3))); Lechuga Paso 3
+(assert (=> (and LechB5  (not LechB4)) (and (not GranB4) GranB5 LeBarca4))); Lechuga Paso 4
+(assert (=> (and LechB6  (not LechB5)) (and (not GranB5) GranB6 LeBarca5))); Lechuga Paso 5
+(assert (=> (and LechB7  (not LechB6)) (and (not GranB6) GranB7 LeBarca6))); Lechuga Paso 6
+(assert (=> (and LechB8  (not LechB7)) (and (not GranB7) GranB8 LeBarca7))); Lechuga Paso 7
+ 
+ 
+(assert (=> (and CabraB2  (not CabraB1)) (and (not GranB1) GranB2 CaBarca1))); Cabra Paso 1
+(assert (=> (and CabraB3  (not CabraB2)) (and (not GranB2) GranB3 CaBarca2))); Cabra Paso 2
+(assert (=> (and CabraB4  (not CabraB3)) (and (not GranB3) GranB4 CaBarca3))); Cabra Paso 3
+(assert (=> (and CabraB5  (not CabraB4)) (and (not GranB4) GranB5 CaBarca4))); Cabra Paso 4
+(assert (=> (and CabraB6  (not CabraB5)) (and (not GranB5) GranB6 CaBarca5))); Cabra Paso 5
+(assert (=> (and CabraB7  (not CabraB6)) (and (not GranB6) GranB7 CaBarca6))); Cabra Paso 6
+(assert (=> (and CabraB8  (not CabraB7)) (and (not GranB7) GranB8 CaBarca7))); Cabra Paso 7
+ 
+ 
+ 
+ 
+(assert (=> (and LoboB2  (not LoboB1)) (and (not GranB1) GranB2 LoBarc1))); Lobo Paso 1
+(assert (=> (and LoboB3  (not LoboB2)) (and (not GranB2) GranB3 LoBarc2))); Lobo Paso 2
+(assert (=> (and LoboB4  (not LoboB3)) (and (not GranB3) GranB4 LoBarc3))); Lobo Paso 3
+(assert (=> (and LoboB5  (not LoboB4)) (and (not GranB4) GranB5 LoBarc4))); Lobo Paso 4
+(assert (=> (and LoboB6  (not LoboB5)) (and (not GranB5) GranB6 LoBarc5))); Lobo Paso 5
+(assert (=> (and LoboB7  (not LoboB6)) (and (not GranB6) GranB7 LoBarc6))); Lobo Paso 6
+(assert (=> (and LoboB8  (not LoboB7)) (and (not GranB7) GranB8 LoBarc7))); Lobo Paso 7
+ 
+;Tenemos que poner que todos están en la orilla A al principio:
+(assert (and (not LoboB1)(not CabraB1)(not LechB1)(not GranB1)))
+;También que están en la orilla B al final:
+(assert (and LoboB8 CabraB8 LechB8 GranB8))
+ 
+; ----CONDICIONES USADAS----
+; No puede estar el lobo con la cabra
+; No puede estar la cabra con la lechuga
+; Solo puede haber un objeto en la barca
+; Si monto una cosa en la barca, pasa a la otra orilla
+; Si tengo una cosa y la he tenido en el otro sitio antes, significa que el granjero y la cosa se han subido a la barca y obtengo así la posición del granjero
+;Tenemos que poner que todos están en la orilla A al principio
+;También que están en la orilla B al final
+ 
+ 
+(check-sat)
+(get-model)
