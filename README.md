@@ -52,6 +52,7 @@ En este repo se cubren las siguientes asignaturas:
 - [Probabilidad y Estadística I 17'-18](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/ProbabilidadI/)
 - Lógica
     - [@square.wheel 19'-20'](https://github.com/M-T3K/UPM/tree/master/Logica/)
+    - [@Clozano03](https://github.com/M-T3K/UPM/tree/master/Logica/)
 - Sistemas Digitales
     - [@PRINCE_KIWII 17'-18'](https://github.com/M-T3K/UPM/tree/master/Sistemas%20Digitales)
     - [@RESKOM326 17'-18'](https://github.com/RESKOM326/ETSIINFUPM/tree/a51c82d7f42102b1c78c75da417356762b1d9198/Primero/SistemasDigitales/)
@@ -177,4 +178,11 @@ Sección con información acerca de las personas que contribuyen a este repo.
     + Contacto:
         + Telegram: _______
         + Github: [Aquí](https://github.com/skgsergio)
+        + E-Mail: _______
+ 
++ clozano03:
+    + Contribuyente.
+    + Contacto:
+        + Telegram: _______
+        + Github: [Aquí](https://github.com/CLozano03)
         + E-Mail: _______
