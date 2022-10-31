@@ -178,3 +178,10 @@ Sección con información acerca de las personas que contribuyen a este repo.
         + Telegram: _______
         + Github: [Aquí](https://github.com/skgsergio)
         + E-Mail: _______
+ 
++ clozano03:
+    + Contribuyente.
+    + Contacto:
+        + Telegram: _______
+        + Github: [Aquí](https://github.com/CLozano03)
+        + E-Mail: _______
